@@ -1,0 +1,84 @@
+body,html{margin:0px; padding:0px;width:100%;
+    font: 12px  "microsoft yahei",Arial,Helvetica,sans-serif;
+    color:#666;
+    margin:0px;
+    border:none;
+    list-style:none;
+}
+
+ol,ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dt,dd,form{
+    margin:0px;
+    padding:0px;
+    border:none;
+    list-style:none;
+}
+img{vertical-align:middle;}
+.rg{float:right;}
+.lf{float:left;}
+a{text-decoration:none;
+    color:#666;}
+a:hover{color:red;text-decoration:underline;}
+input{margin:0px;border:1px solid #ccc;padding-left: 5px;}
+div{margin:0px;padding:0px;}
+
+
+body{background:#f5f5f5;padding-top: 50px;}
+h4{background:#ddd;color:darkred}
+h2{background:#ddd;color:darkred}
+.form_content>div{margin-top:50px;width:685px;padding-top:50px;    margin-left: 50px;}
+div>p{background:#ddd;color:darkred}
+form{margin:50px; width:990px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+}
+table{border-spacing: 0px 15px;background: #f4fcfe;}
+input[type="text"]{width:120px;border-radius: 2px;border: 1px solid #bbb;
+    font-size: 14px;
+    color: #333;
+    padding: 5px;}
+tr>td:last-child{text-align:right;}
+#Product_mation>table{width:685px;}
+#Product_mation table span{margin-left:10px;}
+#User_mation table{width:685px;}
+#User_mation>div{margin-top:30px;}
+#Car_user_mation>table {width:685px;}
+#Car_user_mation span{margin-left:10px;display:inline-block;height:20px;line-height:20px;text-align: center;border:1px solid #666;border-radius:2px;}
+input[type=radio]{margin-left:15px;}
+#Insurance_mation table{width:685px;}
+#Insurance_mation table tr>td:nth-child(4){text-align:center;}
+#Insurance_mation table tr>td:nth-child(5){text-align:right}
+#Parameter_mation table{width:685px ;text-align:right;}
+#aside_Service {float:right;  width: 200px;}
+#aside_Service >div{border:1px solid #333;padding:20px;margin-top:20px}
+#aside_Service >div li{text-align: right;}
+#aside_Service span{vertical-align: middle;margin-top: 2px;
+    margin-bottom: 5px;display:inline-block;height:20px;line-height:20px;text-align: center;border-radius: 2px;width: 80px;border: 1px solid #666;}
+
+
+.pf_left{position:fixed;left:90px;top:50%;background:#6c8f1d;width:80px;color:#fff;padding: 10px;}
+.pf_left span{float:left;width:60px;cursor:pointer;height:15px;line-height:15px;margin-bottom:5px;text-align: center;border:1px solid #fff;border-radius: 2px;}
+#Compute{cursor: pointer;color:#fff;background:rgba(125,23,0,0.9);box-shadow: 0 0 2px#3a930d}
+.Missing{border:1px solid red;box-shadow:0 0 2px red;border:none;}
+
+.Must_fill{background:#c7edcc}
+.None{display:none;}
+#User_mation>p{text-align:center}
+
+.conModel1{    width: 700px;
+    background: #fff;
+    height: 343px;
+    overflow: hidden;
+    float: right;
+    position: fixed;
+    left: 200px;
+    font-size: 17px;
+    box-shadow: 0 0 8px #999;}
+    .conModel1>h3{background:#fff;color:darkred;border-bottom:1px solid #666;text-align:center;}
+.conModel3>ul{margin-left:10px;}
+.conModel3>ul li{margin-bottom:10px}
+.conModel3>ul li:hover{background:#ddd;color:#fff;}
+h3>b{float:right;height:20px;color:red;font-weight:900;box-shadow: 0 0 8px #ddd;}
+
+
+
+

@@ -1,0 +1,197 @@
+body,html{margin:0px; padding:0px;width:100%;
+    font: 120% "microsoft yahei",Arial,Helvetica,sans-serif;
+    font-family: FZ, microsoft yahei, 微软雅黑, Arial;
+    @font-face {font-family: FZ; src: url("../fonts/FZ.ttf");}
+    color:#666;
+    margin:0px;
+    border:none;
+    list-style:none;
+    -webkit-text-size-adjust:none;
+}
+
+* {
+	font-family: microsoft yahei, 微软雅黑, Arial;
+	font-weight:normal;
+}
+
+ol,ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dt,dd,form{
+    margin:0px;
+    padding:0px;
+    border:none;
+    list-style:none;
+}
+img{vertical-align:middle;}
+.rg{float:right;}
+.lf{float:left;}
+a{text-decoration:none;
+    color:#333;}
+a:hover{color:red;text-decoration:underline;}
+input{margin:0px;border:none;padding-left: 4%;outline:none;}
+input[type="text"],input[type="button"]{-webkit-appearance: none;}
+input[type="checkbox"]{border:1px solid #666;    margin-right: 3%;
+    display: inline-block;
+    vertical-align: middle;}
+div{margin:0px;padding:0px;}
+/****************************************************/
+#member_page{padding: 5px}
+#member_page h4{text-align: center;font-size: 1.1rem}
+.selet_psw{margin-top:10px;}
+.selet_psw li{float:left;width:50%;border-bottom:2px solid #ddd;font-size:16px;padding-bottom: 7px;color:#ccc;}
+.selet_psw li.hover{border-bottom: 2px solid red;color:#666;}
+.member_box li{float:left;margin: 25px 0 0 0;width:100%;position:relative;}
+.member_box .storage_Tel li{margin-top:20px;}
+.member_box form>ul>li>input{border:1px solid #ddd;height: 2.3rem;
+                        border-radius: 3px;
+	}
+.member_box li>input[type='text']{width:95%;}
+#phoneCheckCode{width:56%}
+.member_box li>input[type='password']{width:60%;}
+.member_box .user_box li>input[type='password']{width:95%;}
+.Color{color:#fff;background:orange;pointer-events: none;}
+
+.member_box li>span{cursor:pointer;
+    float:right;
+    min-width:58px;
+    text-align:center;
+    line-height:46px;
+    font-size:0.7rem;
+    position:absolute;
+    right:-2px;
+    background:#f8f8f8;
+    color:#888;
+    border-radius:3px;
+    width:35%;
+                    
+}
+.member_box form>input{width: 100%;
+    height: 2.6rem;
+    font-size: 16px;
+   
+    border: none;
+    background: #e82418;
+    margin-top: 42px;
+    color: #fff;
+    letter-spacing: 2px;
+    border-radius: 3px;
+    }
+.member_box>div{display:none;}
+.member_box>div.act{display: block;}
+.storage_Tel li{float:left;width:50%;font-size:0.6rem;}
+.storage_Tel ul>li:last-child{text-align:right;}
+/************************锟斤拷锟斤拷锟斤拷锟斤拷***************/
+#reset_content{padding:5px 20px;}
+.re_top>ul{border-bottom: 1px solid #ddd;float:left;width:100%;font-size: 0.8rem;}
+.re_top li{float:left;width:50%;height:1.5rem;}
+
+.Right>a{color: #333;font-size: 0.7rem;
+display: inline-block;
+    width: 100%;
+    font-size:14px;
+   }
+#reset_box li{float:left;width:80%;margin-top:20px;}
+#reset_box li input{width:70%;height:1.5rem;border:1px solid #ddd;}
+#reset_box .form_text>input{width:55%;}
+li>i{display:none;font-size:0.6rem;color:red;}
+.form_text span{cursor:pointer;display:inline-block;width:30%;text-align:center;line-height:1.5rem;margin-left:20px;height:1.5rem;font-size: 0.8rem;border:1px solid #31b6e7;}
+#reset_box>input[type='submit']{font-size:1rem;margin-top:20px;float:left;width:80%;height:2rem;background:#e4393c;border:none;color:#fff;}
+
+/**********************************************/
+.red{color:red;}
+#mobile_oder{padding:5px 20px;}
+.head_top li{float:left;width:100%;line-height:2.3rem;text-align:center;
+    line-height: 2.2rem;
+    border: 1px solid #eee;
+    border-radius: 3px;
+}
+.order_box{padding:20px 10px 0 20px;}
+.order_box li{float:left;width:100%;font-size:0.8rem;margin-top:10px;}
+.order_box li>input{width:50%;height:1.5rem;border:1px solid plum;margin-right:20px;}
+.order_box li>label{font-size:0.6rem;}
+.order_box li>span{display:inline-block;height:1.5rem;width:17%;border:1px solid #ddd;backgroud:#ccc;text-align:center;line-height:1.5rem;}
+.order_box .mb_code>input{width:30%;}
+.order_box p{font-size:0.6rem;margin:20px 0;float:left;}
+.btn{float:left;width:100%;}
+.btn>input{width:50%;height:1.7rem;background:#e4393c;color:#fff;text-align:center;line-height:1.7rem;}
+
+/******************_oder********/
+#Oder_box{padding:20px;}
+.member_box form p{font-size:0.6rem;float:left;margin-top:10px;width:100%;}
+
+.errorhei{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+ }
+ .errortan{    width: 60.125%;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 32%;
+    background-color: #FFF;
+    box-sizing: border-box;
+    z-index: 6;
+    text-align: center;
+    padding-bottom: 3%;}
+ .errortan1{
+    font-size: 20px;
+    color: #FFF;
+    background-color: #e42219;
+    line-height: 2.5em;}
+ .errortan2{
+    font-size: 20px;
+    color: #333333;
+    line-height: 2em;
+    margin: 4% auto;
+ }
+ .errortan3{
+    font-size: 20px;
+    color: #FFF;
+    background-color: #e42219;
+    width: 110px;
+    display: inline-block;
+    border-radius: 5px;
+    line-height: 2.1em;
+    margin-top: 20px;
+ }
+ #Message{
+    font-size: 16px;
+    padding-top: 10px;
+ }
+
+.login_phoneno_warn{
+	font-size: 17px;
+	width: 200px;
+}
+.login_code_warn{
+	font-size: 17px;
+	width: 200px;
+}
+.login_phonenum_warn{
+	font-size: 17px;
+	width: 200px;
+}
+.login_codenum_warn{
+	font-size: 17px;
+	width: 200px;
+}
+
+/*****************************锟斤拷锟斤拷锟斤拷耄�nbsp;&nbsp;&nbsp;&nbsp;&nbsp;***************************************/
+
+
+ @media screen and (max-width: 310px){.member_box li>input[type='password']{width:50%;}
+ }
+
+
+input {
+	font-family: microsoft yahei, 微软雅黑, Arial;
+	font-weight:normal;
+}
+
+
+
+
+
+

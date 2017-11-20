@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.quicksure.feiche.dao.FeicheMyAccountMapper">
+	<resultMap type="com.quicksure.feiche.entity.LudifcBaseinfor" id="BaseResultMap">
+		<id column="orderId" property="orderid" jdbcType="INTEGER" />
+	    <result column="orderNo" property="orderno" jdbcType="VARCHAR" />
+	    <result column="userinforId" property="userinforid" jdbcType="INTEGER" />
+	    <result column="orderstate" property="orderstate" jdbcType="INTEGER" />
+	    <result column="applicationName" property="applicationname" jdbcType="VARCHAR" />
+	    <result column="insurerName" property="insurername" jdbcType="VARCHAR" />
+	    <result column="app_sex" property="appSex" jdbcType="VARCHAR" />
+	    <result column="ins_sex" property="insSex" jdbcType="VARCHAR" />
+	    <result column="app_email" property="appEmail" jdbcType="VARCHAR" />
+	    <result column="ins_email" property="insEmail" jdbcType="VARCHAR" />
+	    <result column="app_cert_type" property="appCertType" jdbcType="VARCHAR" />
+	    <result column="ins_cert_type" property="insCertType" jdbcType="VARCHAR" />
+	    <result column="app_ID" property="appId" jdbcType="VARCHAR" />
+	    <result column="ins_ID" property="insId" jdbcType="VARCHAR" />
+	    <result column="app_birthday" property="appBirthday" jdbcType="VARCHAR" />
+	    <result column="ins_birthday" property="insBirthday" jdbcType="VARCHAR" />
+	    <result column="app_addr" property="appAddr" jdbcType="VARCHAR" />
+	    <result column="ins_addr" property="insAddr" jdbcType="VARCHAR" />
+	    <result column="app_phone" property="appPhone" jdbcType="VARCHAR" />
+	    <result column="ins_phone" property="insPhone" jdbcType="VARCHAR" />
+	    <result column="ralationship" property="ralationship" jdbcType="VARCHAR" />
+	    <result column="insurance_start_time" property="insuranceStartTime" jdbcType="VARCHAR" />
+	    <result column="insruance_end_time" property="insruanceEndTime" jdbcType="VARCHAR" />
+	    <result column="insrnc_period" property="insrncPeriod" jdbcType="INTEGER" />
+	    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+	    <result column="updateTime" property="updatetime" jdbcType="TIMESTAMP" />
+	    <result column="prodNo" property="prodno" jdbcType="VARCHAR" />
+	    <result column="prodType" property="prodtype" jdbcType="VARCHAR" />
+	    <result column="sumAmount" property="sumamount" jdbcType="VARCHAR" />
+	    <result column="sumPremium" property="sumpremium" jdbcType="VARCHAR" />
+	    <result column="applicationNo" property="applicationno" jdbcType="VARCHAR" />
+	    <result column="policyNo" property="policyno" jdbcType="VARCHAR" />
+	    <result column="pay_url" property="payUrl" jdbcType="VARCHAR" />
+	    <result column="carNo" property="carno" jdbcType="VARCHAR" />
+	    <result column="insureDriveNo" property="insuredriveno" jdbcType="VARCHAR" />
+	    <result column="tgt_fld11" property="tgtFld11" jdbcType="INTEGER" />
+	    <result column="tgt_fld12" property="tgtFld12" jdbcType="VARCHAR" />
+	    <result column="tgt_fld16" property="tgtFld16" jdbcType="VARCHAR" />
+	</resultMap>
+	
+  <!-- 查询待支付订单数量 -->
+  <select id="getMyOrdersCount1" parameterType="java.util.Map" resultType="java.lang.Integer">
+	select 
+		count(*) 
+	from ludifc_baseinfor baseinfor 
+	where baseinfor.orderstate in (40)
+	<choose>
+		<when test="bindUserId!=0">
+			and (baseinfor.userInforId=#{userid} or baseinfor.userInforId=#{bindUserId})
+		</when>
+		<otherwise>
+			and baseinfor.userInforId = #{userid}
+		</otherwise>
+	</choose>
+	<!-- <if test="content!=null and content!=''">
+		and (baseinfor.lcnNo = #{content} or baseinfor.drvOwner = #{content})
+	</if> -->
+  </select>
+  
+  <!-- 查询已支付订单数量 -->
+  <select id="getMyOrdersCount2" parameterType="java.util.Map" resultType="java.lang.Integer">
+	select 
+		count(*) 
+	from ludifc_baseinfor baseinfor 
+	where baseinfor.orderstate in (50,60,70)
+	<choose>
+		<when test="bindUserId!=0">
+			and (baseinfor.userInforId=#{userid} or baseinfor.userInforId=#{bindUserId})
+		</when>
+		<otherwise>
+			and baseinfor.userInforId = #{userid}
+		</otherwise>
+	</choose>
+	<!-- <if test="content!=null and content!=''">
+		and (vhinfor.lcnNo = #{content} or vhinfor.drvOwner = #{content})
+	</if> -->
+  </select>
+  
+  <!-- 查询暂存订单数量 -->
+  <select id="getMyOrdersCount3" parameterType="java.util.Map" resultType="java.lang.Integer">
+	select 
+		count(*) 
+	from ludifc_baseinfor baseinfor 
+	where baseinfor.orderstate in (10,20,30)
+	<choose>
+		<when test="bindUserId!=0">
+			and (baseinfor.userInforId=#{userid} or baseinfor.userInforId=#{bindUserId})
+		</when>
+		<otherwise>
+			and baseinfor.userInforId = #{userid}
+		</otherwise>
+	</choose>
+	<!-- <if test="content!=null and content!=''">
+		and (vhinfor.lcnNo = #{content} or vhinfor.drvOwner = #{content})
+	</if> -->
+  </select>
+  
+  <!-- 查询已撤销订单数量 -->
+  <select id="getMyOrdersCount4" parameterType="java.util.Map" resultType="java.lang.Integer">
+	select 
+		count(*) 
+	from ludifc_baseinfor baseinfor 
+	where baseinfor.orderstate in (80)
+	<choose>
+		<when test="bindUserId!=0">
+			and (baseinfor.userInforId=#{userid} or baseinfor.userInforId=#{bindUserId})
+		</when>
+		<otherwise>
+			and baseinfor.userInforId = #{userid}
+		</otherwise>
+	</choose>
+	<!-- <if test="content!=null and content!=''">
+		and (vhinfor.lcnNo = #{content} or vhinfor.drvOwner = #{content})
+	</if> -->
+  </select>
+  
+  <!-- 查询 一个页面要展示的订单信息 -->
+  <select id="getMyOrders" parameterType="java.util.Map" resultMap="BaseResultMap">
+  	select baseinfor.*
+	from ludifc_baseinfor baseinfor 
+ 	where 1=1 
+	<choose>
+		<when test="bindUserId!=0">
+			and (baseinfor.userInforId = #{userid} or baseinfor.userInforId = #{bindUserId})
+		</when>
+		<otherwise>
+			and baseinfor.userInforId = #{userid}
+		</otherwise>
+	</choose>
+	<choose>
+	 	<when test="index==0">
+	 		and baseinfor.orderstate = 40
+	 	</when>
+	 	<when test="index==1">
+	 		and baseinfor.orderstate in (50,60,70)
+	 	</when>
+	 	<when test="index==2">
+	 		and baseinfor.orderstate in (10,20,30)
+	 	</when>
+	 	<when test="index==3">
+	 		and baseinfor.orderstate = 80
+	 	</when>
+	 	<otherwise>
+	 	</otherwise>
+	</choose>
+ 	order by baseinfor.updateTime DESC
+ 	limit #{currentNum},#{pageSize}
+  </select>
+  
+  <!-- 初始化时查询的待支付前十条订单信息 -->
+  <select id="getMyOrdersTopTen1" parameterType="java.util.Map" resultMap="BaseResultMap">
+	select baseinfor.*
+	from ludifc_baseinfor baseinfor 
+		 LEFT JOIN ludimb_userinfor userinfor on userinfor.userId=baseinfor.userInforId 
+ 	where 1=1 and baseinfor.orderstate in(40)
+ 	 	<choose>
+ 			<when test="bindUserId!=0">
+ 				and (baseinfor.userInforId=#{userid} or baseinfor.userInforId=#{bindUserId})
+ 			</when>
+ 			<otherwise>
+ 				and baseinfor.userInforId = #{userid}
+ 			</otherwise>
+ 		</choose>
+ 		<!-- <if test="content!=null and content!=''">
+			and (vhinfor.lcnNo = #{content} or vhinfor.drvOwner = #{content})
+		</if> -->
+ 		order by baseinfor.updateTime DESC
+ 		limit 10
+  </select>
+  
+  <!-- 初始化时查询的已支付前十条订单信息 -->
+  <select id="getMyOrdersTopTen2" parameterType="java.util.Map" resultMap="BaseResultMap">
+	select baseinfor.*
+	from ludifc_baseinfor baseinfor 
+ 	where 1=1 and baseinfor.orderstate in(50,60,70)
+ 		<choose>
+ 			<when test="bindUserId!=0">
+ 				and (baseinfor.userInforId = #{userid} or baseinfor.userInforId = #{bindUserId})
+ 			</when>
+ 			<otherwise>
+ 				and baseinfor.userInforId = #{userid}
+ 			</otherwise>
+ 		</choose>
+ 		<!-- <if test="content!=null and content!=''">
+			and (vhinfor.lcnNo = #{content} or vhinfor.drvOwner = #{content})
+		</if> -->
+ 		order by baseinfor.updateTime DESC
+ 		limit 10
+  </select>
+  
+  <!-- 初始化时查询的暂存前十条订单信息 -->
+  <select id="getMyOrdersTopTen3" parameterType="java.util.Map" resultMap="BaseResultMap">
+	select baseinfor.*
+	from ludifc_baseinfor baseinfor 
+ 	where 1=1 and baseinfor.orderstate in(10,20,30)
+ 		<choose>
+ 			<when test="bindUserId!=0">
+ 				and (baseinfor.userInforId = #{userid} or baseinfor.userInforId = #{bindUserId})
+ 			</when>
+ 			<otherwise>
+ 				and baseinfor.userInforId = #{userid}
+ 			</otherwise>
+ 		</choose>
+ 		<!-- <if test="content!=null and content!=''">
+			and (vhinfor.lcnNo = #{content} or vhinfor.drvOwner = #{content})
+		</if> -->
+ 		order by baseinfor.updateTime DESC
+ 		limit 10
+  </select>
+  
+  <!-- 初始化时查询的已撤销前十条订单信息 -->
+  <select id="getMyOrdersTopTen4" parameterType="java.util.Map" resultMap="BaseResultMap">
+	select baseinfor.*
+	from ludifc_baseinfor baseinfor 
+ 	where 1=1 and baseinfor.orderstate = 80
+ 		<choose>
+ 			<when test="bindUserId!=0">
+ 				and (baseinfor.userInforId = #{userid} or baseinfor.userInforId = #{bindUserId})
+ 			</when>
+ 			<otherwise>
+ 				and baseinfor.userInforId = #{userid}
+ 			</otherwise>
+ 		</choose>
+ 		<!-- <if test="content!=null and content!=''">
+			and (vhinfor.lcnNo = #{content} or vhinfor.drvOwner = #{content})
+		</if> -->
+ 		order by baseinfor.updateTime DESC
+ 		limit 10
+  </select>
+  
+  <!-- 对单条订单进行操作，例如继续投保等 -->
+  <select id="getInsuranceByOrderNo" parameterType="java.lang.String" resultMap="BaseResultMap">
+  	select baseinfor.*
+	from ludifc_baseinfor baseinfor 
+ 	where baseinfor.orderNo= #{orderno,jdbcType=VARCHAR}
+  </select>
+</mapper>

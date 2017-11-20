@@ -1,0 +1,73 @@
+body,html{margin:0px; padding:0px;width:100%;
+    font: 120% "microsoft yahei",Arial,Helvetica,sans-serif;
+    color:#666;
+    margin:0px;
+    border:none;
+    list-style:none;
+    -webkit-text-size-adjust:none;
+}
+
+ol,ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dt,dd,form{
+    margin:0px;
+    padding:0px;
+    border:none;
+    list-style:none;
+}
+img{vertical-align:middle;}
+.rg{float:right;}
+.lf{float:left;}
+a{text-decoration:none;
+    color:#666;}
+a:hover{color:red;text-decoration:underline;}
+input{margin:0px;border:1px solid #ccc;padding-left: 5px;}
+input[type="text"],input[type="submit"]{-webkit-appearance: none;}
+input[type="checkbox"]{border:1px solid #666}
+div{margin:0px;padding:0px;}
+/*****************************************************************************/
+#layout{max-width:640px;margin:0 auto;}
+.header img{display:block;max-width:100%;}
+#content>h5{padding:2rem;color:#fff;background-image: linear-gradient(top left,#3787bc 10%, #245579 68%);
+    background-image: -webkit-linear-gradient(top left,#3787bc 10%, #245579 68%)}
+table{font-size: 0.8rem;margin-left:2%}
+.Return{
+    height: 1.3rem;
+    background: #fff;
+    border: 1px solid #fe9641;
+    width: 30%;
+}
+.Confirm_pay{
+    width: 30%;
+    height: 1.3rem;
+    background-image:linear-gradient(top ,#fe9641 20%, #fe7706 68%);
+    background-image: -webkit-linear-gradient(top ,#fe9641 20%, #fe7706 68%);
+    border: none;
+    color: #fff;
+}
+.foot{margin-left:2%}
+#pay_box{
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

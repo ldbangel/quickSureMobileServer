@@ -1,0 +1,97 @@
+
+body,html{margin:0px; padding:0px;width:100%;
+           font: 120% "microsoft yahei",Arial,Helvetica,sans-serif;
+           color:#666;
+           margin:0px;
+           border:none;
+           list-style:none;
+           -webkit-text-size-adjust:none;
+}
+
+ol,ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dt,dd,form{
+    margin:0px;
+    padding:0px;
+    border:none;
+    list-style:none;
+}
+img{vertical-align:middle;}
+.rg{float:right;}
+.lf{float:left;}
+a{text-decoration:none;
+    color:#666;}
+a:hover{color:red;text-decoration:underline;}
+input{margin:0px;border:none;padding-left: 10px;}
+input[type="text"],input[type="submit"]{-webkit-appearance: none;}
+input[type="checkbox"]{border:1px solid #666}
+/*#top_box,#top_main,#nav,#banner,#main,#foot_box,#footer{
+    width:1190px;
+    margin:0px auto;
+}*/
+div{margin:0px;padding:0px;}
+/*******************************************************/
+.head_top{background:#e4393c;color:#fff;
+    font-size:1.2rem;
+    text-align:center;
+}
+.LOGO{width:100%;}
+.LOGO>img{display:inline-block;max-width:100%;}
+#Entry li{width:50%;text-align: center;font-size:1rem;margin-top:3px;height:1.7rem;line-hieght:1.6rem}
+#Entry li.hover{background:cadetblue;color:#fff;}
+.content{width:100%;padding-left:6%}
+.content ul input{display:inline-block;width:60%;height:1.5rem;border-radius: 3px;border:1px solid rgb(250,203,212)}
+#get_signal{padding-top:2%;}
+#get_signal>input{width:50%;height:1.3rem;border-radius: 3px;border:1px solid rgb(250,203,212)}
+.identify_code{width:40%;font-size:0.8rem;margin-left:3%;}
+.identify_code>span{float:left;width:60%;min-width:111px;margin:-3px 0 0 2%;height:1.7rem;text-align:center;line-height:1.7rem;border:1px solid #ddd;border-radius:3px;}
+.identify_code>a{font-size:0.6rem;padding-left:8%;float:left;width:100%;}
+.content button{display: inline-block;}
+.entry_btn{width:75%;height:2rem;margin-top:2%;font-size:1rem;color:#fff;border:none;border-radius:4px;background:royalblue;}
+.foot_btn{margin-top:5%;padding-right:10%}
+
+/******************************************注册*****************************/
+.Table{padding:1rem 0 0 1rem;}
+.Table li>input{display:inline-block;margin-bottom:0.8rem;width:53%;height:1.5rem;border-radius: 3px;border:1px solid rgb(211,163,188);float:left;}
+.Table button{float:left;margin:0.3rem 0 0 2%;}
+.pact{font-size:0.6rem;width:100%;}
+.pact>span{margin-left:1rem}
+/************************************我的订单****************************/
+.top{padding:0 5%;margin-top:10px;}
+.top h4{color:#e4393c;text-align: center;float:left;width:55%;height:2rem;padding-left: 3%;}
+.top a{font-size:0.8rem;text-align:center;line-height:1.7rem;width:20%;max-width:180px;border:1px solid #ddd;border-radius: 3px;}
+h6{background:#ddd;float:left;width:100%;text-align:center;}
+.search{width:75%;margin-top:1rem}
+.search input{display:inline-block;width:65%;max-width:400px;height:1.1rem;border:1px solid blueviolet;float: left}
+.search button{display: inline-block;width:20%;max-width:60px;min-width:50px;height:1.2rem;border:1px solid #333;float: left;border-radius: 3px;margin-left:3%}
+#details{margin-top:5%;float:left;width:100%; margin-left: 10px;}
+.detail_title{margin:0 3%;border-left:1px solid #ddd;width:100%;}
+.detail_title li{font-size:0.8rem;float:left;width:23%;height:1.5rem;border:1px solid #ddd;border-left:none;line-height:1.5rem;text-align:center;}
+.active{background:lawngreen}
+
+#detail_content ul{float:left;border-top:1px solid lightskyblue;width:92%;margin:0 3%;}
+#detail_content li{float:left;width:100%;padding:5px 0;border:1px solid lightskyblue;border-top:none;border-radius: 3px;}
+#detail_content li>span,#detail_content li>h6,#detail_content li>b{float:left;text-align:center; font-size: 0.6rem}
+li>h6{width:30%;background:#fff;}
+#detail_content li>span{width:60%}
+#detail_content li>b{width:10%;font-family: SimSun;}
+.to_access p{float:left;width:92%;padding-right: 4px;height: 1.7rem;line-height:1.7rem;color:#FFF;font-size:1rem;text-align:center;margin:0 3%;border-radius: 3px;background: #e4393c;}
+#footer p{float:left;width:94%;margin:0 3%;border-left:1px solid #ddd;}
+#footer{position:fixed;bottom:0;font-size:1rem;width:100%;}
+#footer a{float:left;width:49%;text-align:center;border:1px solid #ddd;border-left:none;heigth:2rem;border-radius: 3px; }
+#footer a:hover{background:lightblue;}
+#detail_content>div{display:none;}
+#detail_content>div.act{display:block;}
+
+/*********************************我的奖励************************************/
+#reward_content table{font-size:0.6rem;float:left;width:93%;margin:0 3%;border-top:1px solid #ddd;border-collapse: collapse;}
+#reward_content table tr{border:1px solid #ddd;border-top:none;}
+#reward_content>div{display:none;}
+#reward_content>div.act{display:block;}
+
+
+
+
+
+
+
+
+

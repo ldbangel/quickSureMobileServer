@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.quicksure.mobile.dao.CarBrandsMapper" >
+  <resultMap id="BaseResultMap" type="com.quicksure.mobile.entity.CarBrands" >
+    <id column="carId" property="carid" jdbcType="INTEGER" />
+    <result column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="demio" property="demio" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="selectBybrandNameAndDemio"  parameterType="com.quicksure.mobile.entity.CarBrands" resultType="java.lang.Integer" >
+    select count(*)
+    from ludimb_brands
+    where brand like CONCAT('%',#{brand},'%')
+    and   demio like CONCAT('%',#{demio},'%')
+  </select>
+  
+</mapper>

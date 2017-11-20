@@ -1,0 +1,225 @@
+* {
+    outline: none;
+    text-decoration: none;
+}
+body,html {
+    margin:0;
+    padding:0;
+    width:100%;
+    font:13px "microsoft yahei",Arial,Helvetica,sans-serif;
+    color:#666;
+    border:none;
+    list-style:none;
+    -webkit-text-size-adjust:none;
+    padding-top:10px;
+    background:#f6f6f6;
+}
+ol,ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dt,dd,form {
+    margin:0;
+    padding:0;
+    border:none;
+    list-style:none;
+}
+img {
+    vertical-align:middle;
+}
+.rg {
+    float:right;
+}
+.lf {
+    float:left;
+}
+a {
+    text-decoration:none;
+    color:#666;
+}
+input {
+    width:200px;
+    margin-left:10px;
+    background:#fefefe;
+    border:1px solid #bbb;
+    font-size:14px;
+    color:#333;
+    padding:7px;
+}
+div {
+    margin:0;
+    padding:0;
+}
+table {
+    border-spacing:0 10px;
+    border-collapse:separate;
+  /*   min-width:1300px; */
+}
+#Table_list td {
+    border-right: 1px solid #fff;
+}
+#Table_list table {
+    border-spacing:0;
+}
+form {
+    box-shadow:0 0 2px #f0eef9;
+    margin:0 auto;
+    padding:20px 40px;
+    background: #fff;
+    border-radius: 2px;
+    border: 1px solid #ececec;
+}
+/* tr>td:last-child {
+    text-align:right;
+} */
+.btn {
+    text-align:right;
+}
+.btn>span {
+    display: block;
+    text-align:center;
+    display:inline-block;
+    height:30px;
+    border-radius:2px;
+    margin-right: 16%;
+}
+.btn a {
+    display:inline-block;
+    line-height:30px;
+}
+.btn i {
+    display:inline-block;
+    border-left:1px solid #cecece;
+    height:15px;
+    margin: 0 20px -3px;
+}
+.Search_btn, .Clear_btn {
+    color:#888;
+}
+.Search_btn img, .Clear_btn img {
+    width: 16px;
+    height: 16px;
+    margin-right: 9px;
+}
+select {
+    background:#fefefe;
+    font-size:14px;
+    color:#333;
+    padding:7px;
+    margin-left: 7px;
+}
+.product_content {
+    margin:20px auto;
+    background: #fff;
+    border: 1px solid #ececec;
+}
+.titlebg td{
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 15px;
+    background: #D8000B;
+}
+#Table_list {
+    border-bottom:1px dashed #ccc;
+    border-radius: 2px;
+    text-align: center;
+}
+#Table_list {
+    height:auto;
+}
+.Table_title li:nth-child(2n) {
+    /*color:yellowgreen*/
+}
+#Table_list>table tr>td:first-child {
+    /*background:lightskyblue;*/
+}
+#Table_list>table tr>td:nth-child(2) {
+    /*color:#ee914a*/
+}
+#Table_list>table tr>td:nth-child(3) {
+    /*color:#6e97c8*/
+}
+#Table_list>table tr>td:nth-child(7) {
+    /*color:red;*/
+}
+#Table_list>table tr>td:nth-child(8) {
+    /*color:#ffce43;*/
+}
+#Table_list>table tr>td:nth-child(9) {
+    /*color:#ffce43;*/
+}
+.trbg1 {
+    background: #fff;
+    font-size: 8px;
+}
+.trbg2 {
+    background: #f8f8f8;
+    font-size: 8px;
+}
+.trbg1 td, .trbg2 td {
+   padding-top: 17px;
+    padding-bottom: 20px;
+    border-right: 1px;
+    text-align: center;
+}
+.foot_btn {
+    text-align:right;
+    margin:30px 40px 30px 0;
+    padding-bottom: 20px;
+}
+/* .foot_btn>button {
+    border:none;
+    display:inline-block;
+    font-size: 15px;
+    padding: 8px 36px;
+    font-family:"microsoft yahei",Arial,Helvetica,sans-serif;
+    background:#b01200;
+    border-radius:2px;
+    color:#fff;
+    margin-left: 12px;
+    cursor:pointer;
+} 
+
+.foot_btn>button:nth-child(4) {
+    background:#ddd;
+    border-radius:2px;
+    color:#666;
+} */
+
+.allow {
+	border:none;
+    display:inline-block;
+    font-size: 15px;
+    padding: 8px 36px;
+    font-family:"microsoft yahei",Arial,Helvetica,sans-serif;
+    background:#b01200;
+    border-radius:2px;
+    color:#fff;
+    margin-left: 12px;
+    cursor:pointer;
+}
+
+.ban {
+	background:#ddd;
+    border-radius:2px;
+    color:#666;
+}
+
+#pager{margin-top:5px;float:left; width:100%;margin-bottom: 12px;}
+#pager a{display: block;width:100%;height:100%;}
+#pager li{float:left;text-align:center;margin-left:1%;cursor:pointer;border-radius: 2px;font-size:0.8rem; width:20px;height:30px;line-height:30px;}
+#pager .prevPage,#pager .nextPage{width:50px;height:30px;}
+#pager .AllPage{width:60px;height:30px;background: #fff;}
+
+#pager .active{width: 23px;height:28px;margin-top: 1px;}
+#pager .att{background:rgba(13,10,125,0.2);}
+
+
+titlebg td{padding: 10px 0px;}
+.trbg2 td{text-align:center;}
+
+.green{background:#444; color:#fff;}
+.ensure{display: inline-block;
+    width:30%;
+    font-size: 16px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: darkgray;
+    color: ghostwhite;}
+}

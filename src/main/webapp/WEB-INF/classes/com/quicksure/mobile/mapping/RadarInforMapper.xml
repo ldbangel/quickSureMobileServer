@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.quicksure.mobile.dao.RadarInforMapper" >
+  <resultMap id="BaseResultMap" type="com.quicksure.mobile.entity.RadarInfor" >
+    <id column="radarInforId" property="radarInforId" jdbcType="INTEGER" />
+    <result column="baseinforOrderNo" property="BaseinforOrderNo" jdbcType="VARCHAR" />
+    <result column="ownerName" property="ownername" jdbcType="VARCHAR" />
+    <result column="lcnno" property="lcnno" jdbcType="VARCHAR" />
+    <result column="brandName" property="brandName" jdbcType="VARCHAR" />
+    <result column="isimported" property="isImported" jdbcType="VARCHAR" />
+    <result column="highriskcar" property="highriskcar" jdbcType="VARCHAR" />
+    <result column="jqInsurance" property="IsChoiceCTPL" jdbcType="VARCHAR" />
+    <result column="jqPremium" property="jqpremium" jdbcType="VARCHAR" />
+    <result column="carDamageInsurance" property="isChoiceMOD" jdbcType="VARCHAR" />
+    <result column="carDamagePremium" property="SSPremMOD" jdbcType="VARCHAR" />
+    <result column="deductiblecardamagepremium" property="SSPremDedWaiverMOD" jdbcType="VARCHAR" />
+    <result column="threeLiabilityInsurance" property="IsChoiceVTPL" jdbcType="VARCHAR" />
+    <result column="threeLiabiltyPremium" property="SSPremVTPL" jdbcType="VARCHAR" />
+     <result column="deductiblethrliabiltypremium" property="SSPremDedWaiverVTPL" jdbcType="VARCHAR" />
+    <result column="RATinsurance" property="IsChoiceTheft" jdbcType="VARCHAR" />
+    <result column="RATpremium" property="SSPremVehicleTheft" jdbcType="VARCHAR" />
+     <result column="deductibleratpremium" property="SSPremDedWaiverTheft" jdbcType="VARCHAR" />
+    <result column="driverSeatInsurance" property="IsChoiceDriver" jdbcType="VARCHAR" />
+    <result column="driverSeatPremium" property="SSPremDriverLiab" jdbcType="VARCHAR" />
+     <result column="deductibledriverseatpremium" property="SSPremDedWaiverDriverLiab" jdbcType="VARCHAR" />
+    <result column="passengerInsurance" property="IsChoicePassenger" jdbcType="VARCHAR" />
+    <result column="passengerPremium" property="SSPremPassengerLiab" jdbcType="VARCHAR" />
+     <result column="deductiblepassengerpremium" property="SSPremDedWaiverPssgrLiab" jdbcType="VARCHAR" />
+    <result column="DZinsurance" property="IsChoiceCombustion" jdbcType="VARCHAR" />
+    <result column="DZpremium" property="SSPremCombustion" jdbcType="VARCHAR" />
+     <result column="deductibledzpremium" property="SSPremDedWaiverCombust" jdbcType="VARCHAR" />
+    <result column="glassInsurance" property="isChoiceGlass" jdbcType="VARCHAR" />
+    <result column="glassPremium" property="SSPremGlass" jdbcType="VARCHAR" />
+    <result column="totalPremium" property="SSPremTotal" jdbcType="VARCHAR" />
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updateTime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="QSActuarialRiskCostCTPL" property="QSActuarialRiskCostCTPL" jdbcType="VARCHAR" />
+    <result column="QSActuarialRiskCostMOD" property="QSActuarialRiskCostMOD" jdbcType="VARCHAR" />
+    <result column="QSActuarialRiskCostVTPL" property="QSActuarialRiskCostVTPL" jdbcType="VARCHAR" />
+    <result column="QSActuarialRiskCostTheft" property="QSActuarialRiskCostTheft" jdbcType="VARCHAR" />
+    <result column="QSActuarialRiskCostCombust" property="QSActuarialRiskCostCombust" jdbcType="VARCHAR" />
+    <result column="QSActuarialRiskCostDriverLiab" property="QSActuarialRiskCostDriverLiab" jdbcType="VARCHAR" />
+    <result column="QSActuarialRiskCostPssgrLiab" property="QSActuarialRiskCostPssgrLiab" jdbcType="VARCHAR" />
+    <result column="QSActuarialRiskCostGlass" property="QSActuarialRiskCostGlass" jdbcType="VARCHAR" />
+    <result column="QSActuarialRiskCostOther" property="QSActuarialRiskCostOther" jdbcType="VARCHAR" />
+    <result column="QSActuarialRiskCostTotal" property="QSActuarialRiskCostTotal" jdbcType="VARCHAR" />
+    <result column="TariffPremAfterDiscountMOD" property="TariffPremAfterDiscountMOD" jdbcType="VARCHAR" />
+    <result column="TariffPremAfterDiscountVTPL" property="TariffPremAfterDiscountVTPL" jdbcType="VARCHAR" />
+    <result column="TariffPremAfterDiscountTheft" property="TariffPremAfterDiscountTheft" jdbcType="VARCHAR" />
+    <result column="TariffPremAfterDiscountCombust" property="TariffPremAfterDiscountCombust" jdbcType="VARCHAR" />
+    <result column="TariffPremAfterDiscountDriverLiab" property="TariffPremAfterDiscountDriverLiab" jdbcType="VARCHAR" />
+    <result column="TariffPremAfterDiscountPssgrLiab" property="TariffPremAfterDiscountPssgrLiab" jdbcType="VARCHAR" />
+    <result column="TariffPremAfterDiscountGlass" property="TariffPremAfterDiscountGlass" jdbcType="VARCHAR" />
+    <result column="TariffPremAfterDiscountDedWaiverCombust" property="TariffPremAfterDiscountDedWaiverCombust" jdbcType="VARCHAR" />
+    <result column="TariffPremAfterDiscountDedWaiverDriverLiab" property="TariffPremAfterDiscountDedWaiverDriverLiab" jdbcType="VARCHAR" />
+    <result column="TariffPremAfterDiscountDedWaiverMOD" property="TariffPremAfterDiscountDedWaiverMOD" jdbcType="VARCHAR" />
+    <result column="TariffPremAfterDiscountDedWaiverPssgrLiab" property="TariffPremAfterDiscountDedWaiverPssgrLiab" jdbcType="VARCHAR" />
+    <result column="TariffPremAfterDiscountDedWaiverTheft" property="TariffPremAfterDiscountDedWaiverTheft" jdbcType="VARCHAR" />
+    <result column="TariffPremAfterDiscountDedWaiverVTPL" property="TariffPremAfterDiscountDedWaiverVTPL" jdbcType="VARCHAR" />
+    <result column="radarSypremium" property="radarSypremium" jdbcType="VARCHAR" />
+    <result column="PremNoClaimsDiscount" property="PremNoClaimsDiscount" jdbcType="VARCHAR" />
+    <result column="PremTrafficViolation" property="PremTrafficViolation" jdbcType="VARCHAR" />
+    <result column="PremUnderwritingFactor" property="PremUnderwritingFactor" jdbcType="VARCHAR" />
+    <result column="PremChannelFactor" property="PremChannelFactor" jdbcType="VARCHAR" />
+    <result column="PremTotal" property="PremTotal" jdbcType="VARCHAR" />
+    <result column="BusinessRulesResults" property="BusinessRulesResults" jdbcType="VARCHAR" />
+    <result column="BusinessRulesErrorMessages" property="BusinessRulesErrorMessages" jdbcType="VARCHAR" />
+    <result column="BusinessRulesEndorsements" property="BusinessRulesEndorsements" jdbcType="VARCHAR" />
+    <result column="RadarNotes" property="RadarNotes" jdbcType="VARCHAR" />
+    <result column="RadarModelName" property="RadarModelName" jdbcType="VARCHAR" />
+  </resultMap>
+ 
+  <sql id="Base_Column_List" >
+    radarInforId, baseinforOrderNo, ownerName,lcnno, brandName,isimported, highriskcar, jqInsurance, jqPremium, carDamageInsurance, 
+    carDamagePremium,deductiblecardamagepremium, threeLiabilityInsurance, threeLiabiltyPremium,deductiblethrliabiltypremium, RATinsurance, RATpremium, 
+    deductibleratpremium,driverSeatInsurance, driverSeatPremium,deductibledriverseatpremium, passengerInsurance, passengerPremium,deductiblepassengerpremium, DZinsurance, 
+    DZpremium,deductibledzpremium, glassInsurance, glassPremium, totalPremium, createTime, updateTime, QSActuarialRiskCostCTPL, 
+    QSActuarialRiskCostMOD, QSActuarialRiskCostVTPL, QSActuarialRiskCostTheft, QSActuarialRiskCostCombust, 
+    QSActuarialRiskCostDriverLiab, QSActuarialRiskCostPssgrLiab, QSActuarialRiskCostGlass, 
+    QSActuarialRiskCostOther, QSActuarialRiskCostTotal, TariffPremAfterDiscountMOD, TariffPremAfterDiscountVTPL, 
+    TariffPremAfterDiscountTheft, TariffPremAfterDiscountCombust, TariffPremAfterDiscountDriverLiab, 
+    TariffPremAfterDiscountPssgrLiab, TariffPremAfterDiscountGlass, TariffPremAfterDiscountDedWaiverCombust, 
+    TariffPremAfterDiscountDedWaiverDriverLiab, TariffPremAfterDiscountDedWaiverMOD, 
+    TariffPremAfterDiscountDedWaiverPssgrLiab, TariffPremAfterDiscountDedWaiverTheft, 
+    TariffPremAfterDiscountDedWaiverVTPL, radarSypremium,PremNoClaimsDiscount, PremTrafficViolation, 
+    PremUnderwritingFactor, PremChannelFactor, PremTotal, BusinessRulesResults, BusinessRulesErrorMessages, 
+    BusinessRulesEndorsements, RadarNotes, RadarModelName
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from ludimb_radarinfor
+    where baseinforOrderNo = #{BaseinforOrderNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ludimb_radarinfor
+    where radarInforId = #{radarInforId,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="insert" parameterType="com.quicksure.mobile.entity.RadarInfor" >
+    insert into ludimb_radarinfor (baseinforOrderNo, ownerName,lcnno, brandName,isimported, highriskcar, 
+	      jqInsurance, jqPremium, carDamageInsurance, 
+	      carDamagePremium,deductiblecardamagepremium, threeLiabilityInsurance, 
+	      threeLiabiltyPremium,deductiblethrliabiltypremium, RATinsurance, RATpremium, 
+	      deductibleratpremium,driverSeatInsurance, driverSeatPremium,deductibledriverseatpremium, 
+	      passengerInsurance, passengerPremium,deductiblepassengerpremium, DZinsurance, 
+	      DZpremium,deductibledzpremium, glassInsurance, glassPremium, 
+	      totalPremium, createTime, updateTime, 
+	      QSActuarialRiskCostCTPL, QSActuarialRiskCostMOD, 
+	      QSActuarialRiskCostVTPL, QSActuarialRiskCostTheft, 
+	      QSActuarialRiskCostCombust, QSActuarialRiskCostDriverLiab, 
+	      QSActuarialRiskCostPssgrLiab, QSActuarialRiskCostGlass, 
+	      QSActuarialRiskCostOther, QSActuarialRiskCostTotal, 
+	      TariffPremAfterDiscountMOD, TariffPremAfterDiscountVTPL, 
+	      TariffPremAfterDiscountTheft, TariffPremAfterDiscountCombust, 
+	      TariffPremAfterDiscountDriverLiab, TariffPremAfterDiscountPssgrLiab, 
+	      TariffPremAfterDiscountGlass, TariffPremAfterDiscountDedWaiverCombust, 
+	      TariffPremAfterDiscountDedWaiverDriverLiab, TariffPremAfterDiscountDedWaiverMOD, 
+	      TariffPremAfterDiscountDedWaiverPssgrLiab, TariffPremAfterDiscountDedWaiverTheft, 
+	      TariffPremAfterDiscountDedWaiverVTPL,radarSypremium, PremNoClaimsDiscount, 
+	      PremTrafficViolation, PremUnderwritingFactor, 
+	      PremChannelFactor, PremTotal, BusinessRulesResults, 
+	      BusinessRulesErrorMessages, BusinessRulesEndorsements, 
+	      RadarNotes, RadarModelName)
+      values (#{BaseinforOrderNo,jdbcType=VARCHAR},
+              #{ownername,jdbcType=VARCHAR}, 
+              #{lcnno,jdbcType=VARCHAR}, 
+              #{brandName,jdbcType=VARCHAR}, 
+              #{isImported,jdbcType=VARCHAR}, 
+              #{highriskcar,jdbcType=VARCHAR}, 
+		      #{IsChoiceCTPL,jdbcType=VARCHAR},
+		      #{jqpremium,jdbcType=VARCHAR},
+		      #{isChoiceMOD,jdbcType=VARCHAR}, 
+		      #{SSPremMOD,jdbcType=VARCHAR},
+		      #{SSPremDedWaiverMOD,jdbcType=VARCHAR},
+		      #{IsChoiceVTPL,jdbcType=VARCHAR}, 
+		      #{SSPremVTPL,jdbcType=VARCHAR},
+		      #{SSPremDedWaiverVTPL,jdbcType=VARCHAR},
+		      #{IsChoiceTheft,jdbcType=VARCHAR},
+		      #{SSPremVehicleTheft,jdbcType=VARCHAR}, 
+		      #{SSPremDedWaiverTheft,jdbcType=VARCHAR},
+		      #{IsChoiceDriver,jdbcType=VARCHAR},
+		      #{SSPremDriverLiab,jdbcType=VARCHAR}, 
+		      #{SSPremDedWaiverDriverLiab,jdbcType=VARCHAR},
+		      #{IsChoicePassenger,jdbcType=VARCHAR},
+		      #{SSPremPassengerLiab,jdbcType=VARCHAR},
+		      #{SSPremDedWaiverPssgrLiab,jdbcType=VARCHAR},
+		      #{IsChoiceCombustion,jdbcType=VARCHAR}, 
+		      #{SSPremCombustion,jdbcType=VARCHAR}, 
+		      #{SSPremDedWaiverCombust,jdbcType=VARCHAR},
+		      #{isChoiceGlass,jdbcType=VARCHAR},
+		      #{SSPremGlass,jdbcType=VARCHAR}, 
+		      #{SSPremTotal,jdbcType=VARCHAR},
+		      #{createtime,jdbcType=TIMESTAMP}, 
+		      #{updatetime,jdbcType=TIMESTAMP}, 
+		      #{QSActuarialRiskCostCTPL,jdbcType=VARCHAR},
+		      #{QSActuarialRiskCostMOD,jdbcType=VARCHAR}, 
+		      #{QSActuarialRiskCostVTPL,jdbcType=VARCHAR},
+		      #{QSActuarialRiskCostTheft,jdbcType=VARCHAR}, 
+		      #{QSActuarialRiskCostCombust,jdbcType=VARCHAR}, 
+		      #{QSActuarialRiskCostDriverLiab,jdbcType=VARCHAR}, 
+		      #{QSActuarialRiskCostPssgrLiab,jdbcType=VARCHAR},
+		      #{QSActuarialRiskCostGlass,jdbcType=VARCHAR}, 
+		      #{QSActuarialRiskCostOther,jdbcType=VARCHAR},
+		      #{QSActuarialRiskCostTotal,jdbcType=VARCHAR}, 
+		      #{TariffPremAfterDiscountMOD,jdbcType=VARCHAR},
+		      #{TariffPremAfterDiscountVTPL,jdbcType=VARCHAR}, 
+		      #{TariffPremAfterDiscountTheft,jdbcType=VARCHAR},
+		      #{TariffPremAfterDiscountCombust,jdbcType=VARCHAR}, 
+		      #{TariffPremAfterDiscountDriverLiab,jdbcType=VARCHAR},
+		      #{TariffPremAfterDiscountPssgrLiab,jdbcType=VARCHAR}, 
+		      #{TariffPremAfterDiscountGlass,jdbcType=VARCHAR},
+		      #{TariffPremAfterDiscountDedWaiverCombust,jdbcType=VARCHAR}, 
+		      #{TariffPremAfterDiscountDedWaiverDriverLiab,jdbcType=VARCHAR},
+		      #{TariffPremAfterDiscountDedWaiverMOD,jdbcType=VARCHAR}, 
+		      #{TariffPremAfterDiscountDedWaiverPssgrLiab,jdbcType=VARCHAR}, 
+		      #{TariffPremAfterDiscountDedWaiverTheft,jdbcType=VARCHAR}, 
+		      #{TariffPremAfterDiscountDedWaiverVTPL,jdbcType=VARCHAR}, 
+		      #{radarSypremium,jdbcType=VARCHAR}, 
+		      #{PremNoClaimsDiscount,jdbcType=VARCHAR}, 
+		      #{PremTrafficViolation,jdbcType=VARCHAR}, 
+		      #{PremUnderwritingFactor,jdbcType=VARCHAR}, 
+		      #{PremChannelFactor,jdbcType=VARCHAR}, 
+		      #{PremTotal,jdbcType=VARCHAR}, 
+		      #{BusinessRulesResults,jdbcType=VARCHAR}, 
+		      #{BusinessRulesErrorMessages,jdbcType=VARCHAR},
+		      #{BusinessRulesEndorsements,jdbcType=VARCHAR}, 
+		      #{RadarNotes,jdbcType=VARCHAR}, 
+		      #{RadarModelName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quicksure.mobile.entity.RadarInfor" >
+    insert into ludimb_radarinfor
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="BaseinforOrderNo != null" >
+        baseinforOrderNo,
+      </if>
+      <if test="ownername != null" >
+        ownerName,
+      </if>
+      <if test="lcnno != null" >
+        lcnno,
+      </if>
+      <if test="brandName != null" >
+        brandName,
+      </if>
+      <if test="isImported != null" >
+        isimported,
+      </if>
+      <if test="highriskcar != null" >
+        highriskcar,
+      </if>
+      <if test="IsChoiceCTPL != null" >
+        jqInsurance,
+      </if>
+      <if test="jqpremium != null" >
+        jqPremium,
+      </if>
+      <if test="isChoiceMOD != null" >
+        carDamageInsurance,
+      </if>
+      <if test="SSPremMOD != null" >
+        carDamagePremium,
+      </if>
+       <if test="SSPremDedWaiverMOD != null" >
+        deductiblecardamagepremium,
+      </if>
+      <if test="IsChoiceVTPL != null" >
+        threeLiabilityInsurance,
+      </if>
+      <if test="SSPremVTPL != null" >
+        threeLiabiltyPremium,
+      </if>
+      <if test="SSPremDedWaiverVTPL != null" >
+        deductiblethrliabiltypremium,
+      </if>
+      <if test="IsChoiceTheft != null" >
+        RATinsurance,
+      </if>
+      <if test="SSPremVehicleTheft != null" >
+        RATpremium,
+      </if>
+       <if test="SSPremDedWaiverTheft != null" >
+        deductibleratpremium,
+      </if>
+      <if test="IsChoiceDriver != null" >
+        driverSeatInsurance,
+      </if>
+      <if test="SSPremDriverLiab != null" >
+        driverSeatPremium,
+      </if>
+       <if test="SSPremDedWaiverTheft != null" >
+        deductibledriverseatpremium,
+      </if>
+      <if test="IsChoicePassenger != null" >
+        passengerInsurance,
+      </if>
+      <if test="SSPremPassengerLiab != null" >
+        passengerPremium,
+      </if>
+      <if test="SSPremDedWaiverPssgrLiab != null" >
+        deductiblepassengerpremium,
+      </if>
+      <if test="IsChoiceCombustion != null" >
+        DZinsurance,
+      </if>
+      <if test="SSPremCombustion != null" >
+        DZpremium,
+      </if>
+      <if test="SSPremDedWaiverCombust != null" >
+        deductibledzpremium,
+      </if>
+      <if test="isChoiceGlass != null" >
+        glassInsurance,
+      </if>
+      <if test="SSPremGlass != null" >
+        glassPremium,
+      </if>
+      <if test="SSPremTotal != null" >
+        totalPremium,
+      </if>
+      <if test="createtime != null" >
+        createTime,
+      </if>
+      <if test="updatetime != null" >
+        updateTime,
+      </if>
+      <if test="QSActuarialRiskCostCTPL != null" >
+        QSActuarialRiskCostCTPL,
+      </if>
+      <if test="QSActuarialRiskCostMOD != null" >
+        QSActuarialRiskCostMOD,
+      </if>
+      <if test="QSActuarialRiskCostVTPL != null" >
+        QSActuarialRiskCostVTPL,
+      </if>
+      <if test="QSActuarialRiskCostTheft != null" >
+        QSActuarialRiskCostTheft,
+      </if>
+      <if test="QSActuarialRiskCostCombust != null" >
+        QSActuarialRiskCostCombust,
+      </if>
+      <if test="QSActuarialRiskCostDriverLiab != null" >
+        QSActuarialRiskCostDriverLiab,
+      </if>
+      <if test="QSActuarialRiskCostPssgrLiab != null" >
+        QSActuarialRiskCostPssgrLiab,
+      </if>
+      <if test="QSActuarialRiskCostGlass != null" >
+        QSActuarialRiskCostGlass,
+      </if>
+      <if test="QSActuarialRiskCostOther != null" >
+        QSActuarialRiskCostOther,
+      </if>
+      <if test="QSActuarialRiskCostTotal != null" >
+        QSActuarialRiskCostTotal,
+      </if>
+      <if test="TariffPremAfterDiscountMOD != null" >
+        TariffPremAfterDiscountMOD,
+      </if>
+      <if test="TariffPremAfterDiscountVTPL != null" >
+        TariffPremAfterDiscountVTPL,
+      </if>
+      <if test="TariffPremAfterDiscountTheft != null" >
+        TariffPremAfterDiscountTheft,
+      </if>
+      <if test="TariffPremAfterDiscountCombust != null" >
+        TariffPremAfterDiscountCombust,
+      </if>
+      <if test="TariffPremAfterDiscountDriverLiab != null" >
+        TariffPremAfterDiscountDriverLiab,
+      </if>
+      <if test="TariffPremAfterDiscountPssgrLiab != null" >
+        TariffPremAfterDiscountPssgrLiab,
+      </if>
+      <if test="TariffPremAfterDiscountGlass != null" >
+        TariffPremAfterDiscountGlass,
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverCombust != null" >
+        TariffPremAfterDiscountDedWaiverCombust,
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverDriverLiab != null" >
+        TariffPremAfterDiscountDedWaiverDriverLiab,
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverMOD != null" >
+        TariffPremAfterDiscountDedWaiverMOD,
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverPssgrLiab != null" >
+        TariffPremAfterDiscountDedWaiverPssgrLiab,
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverTheft != null" >
+        TariffPremAfterDiscountDedWaiverTheft,
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverVTPL != null" >
+        TariffPremAfterDiscountDedWaiverVTPL,
+      </if>
+       <if test="radarSypremium != null" >
+        radarSypremium,
+      </if>
+      <if test="PremNoClaimsDiscount != null" >
+        PremNoClaimsDiscount,
+      </if>
+      <if test="PremTrafficViolation != null" >
+        PremTrafficViolation,
+      </if>
+      <if test="PremUnderwritingFactor != null" >
+        PremUnderwritingFactor,
+      </if>
+      <if test="PremChannelFactor != null" >
+        PremChannelFactor,
+      </if>
+      <if test="PremTotal != null" >
+        PremTotal,
+      </if>
+      <if test="BusinessRulesResults != null" >
+        BusinessRulesResults,
+      </if>
+      <if test="BusinessRulesErrorMessages != null" >
+        BusinessRulesErrorMessages,
+      </if>
+      <if test="BusinessRulesEndorsements != null" >
+        BusinessRulesEndorsements,
+      </if>
+      <if test="RadarNotes != null" >
+        RadarNotes,
+      </if>
+      <if test="RadarModelName != null" >
+        RadarModelName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="BaseinforOrderNo != null" >
+        #{BaseinforOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="ownername != null" >
+        #{ownername,jdbcType=VARCHAR},
+      </if>
+       <if test="lcnno != null" >
+        #{lcnno,jdbcType=VARCHAR},
+      </if>
+      <if test="brandName != null" >
+        #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="isImported != null" >
+        #{isImported,jdbcType=VARCHAR},
+      </if>
+      <if test="highriskcar != null" >
+        #{highriskcar,jdbcType=VARCHAR},
+      </if>
+      <if test="IsChoiceCTPL != null" >
+        #{IsChoiceCTPL,jdbcType=VARCHAR},
+      </if>
+      <if test="jqpremium != null" >
+        #{jqpremium,jdbcType=VARCHAR},
+      </if>
+      <if test="isChoiceMOD != null" >
+        #{isChoiceMOD,jdbcType=VARCHAR},
+      </if>
+      <if test="SSPremMOD != null" >
+        #{SSPremMOD,jdbcType=VARCHAR},
+      </if>
+       <if test="SSPremDedWaiverMOD != null" >
+        #{SSPremDedWaiverMOD,jdbcType=VARCHAR},
+      </if>
+      <if test="IsChoiceVTPL != null" >
+        #{IsChoiceVTPL,jdbcType=VARCHAR},
+      </if>
+      <if test="SSPremVTPL != null" >
+        #{SSPremVTPL,jdbcType=VARCHAR},
+      </if>
+       <if test="SSPremDedWaiverVTPL != null" >
+        #{SSPremDedWaiverVTPL,jdbcType=VARCHAR},
+       </if> 
+      <if test="IsChoiceTheft != null" >
+        #{IsChoiceTheft,jdbcType=VARCHAR},
+      </if>
+      <if test="SSPremVehicleTheft != null" >
+        #{SSPremVehicleTheft,jdbcType=VARCHAR},
+      </if>
+      <if test="SSPremDedWaiverTheft != null" >
+        #{SSPremDedWaiverTheft,jdbcType=VARCHAR},
+      </if>
+      <if test="IsChoiceDriver != null" >
+        #{IsChoiceDriver,jdbcType=VARCHAR},
+      </if>
+      <if test="SSPremDriverLiab != null" >
+        #{SSPremDriverLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="SSPremDedWaiverDriverLiab != null" >
+        #{SSPremDedWaiverDriverLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="IsChoicePassenger != null" >
+        #{IsChoicePassenger,jdbcType=VARCHAR},
+      </if>
+      <if test="SSPremPassengerLiab != null" >
+        #{SSPremPassengerLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="SSPremDedWaiverPssgrLiab != null" >
+         #{SSPremDedWaiverPssgrLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="IsChoiceCombustion != null" >
+        #{IsChoiceCombustion,jdbcType=VARCHAR},
+      </if>
+      <if test="SSPremCombustion != null" >
+        #{SSPremCombustion,jdbcType=VARCHAR},
+      </if>
+      <if test="SSPremDedWaiverCombust != null" >
+         #{SSPremDedWaiverCombust,jdbcType=VARCHAR},
+      </if>
+      <if test="isChoiceGlass != null" >
+        #{isChoiceGlass,jdbcType=VARCHAR},
+      </if>
+      <if test="SSPremGlass != null" >
+        #{SSPremGlass,jdbcType=VARCHAR},
+      </if>
+      <if test="SSPremTotal != null" >
+        #{SSPremTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="QSActuarialRiskCostCTPL != null" >
+        #{QSActuarialRiskCostCTPL,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostMOD != null" >
+        #{QSActuarialRiskCostMOD,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostVTPL != null" >
+        #{QSActuarialRiskCostVTPL,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostTheft != null" >
+        #{QSActuarialRiskCostTheft,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostCombust != null" >
+        #{QSActuarialRiskCostCombust,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostDriverLiab != null" >
+        #{QSActuarialRiskCostDriverLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostPssgrLiab != null" >
+        #{QSActuarialRiskCostPssgrLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostGlass != null" >
+        #{QSActuarialRiskCostGlass,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostOther != null" >
+        #{QSActuarialRiskCostOther,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostTotal != null" >
+        #{QSActuarialRiskCostTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountMOD != null" >
+        #{TariffPremAfterDiscountMOD,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountVTPL != null" >
+        #{TariffPremAfterDiscountVTPL,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountTheft != null" >
+        #{TariffPremAfterDiscountTheft,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountCombust != null" >
+        #{TariffPremAfterDiscountCombust,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDriverLiab != null" >
+        #{TariffPremAfterDiscountDriverLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountPssgrLiab != null" >
+        #{TariffPremAfterDiscountPssgrLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountGlass != null" >
+        #{TariffPremAfterDiscountGlass,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverCombust != null" >
+        #{TariffPremAfterDiscountDedWaiverCombust,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverDriverLiab != null" >
+        #{TariffPremAfterDiscountDedWaiverDriverLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverMOD != null" >
+        #{TariffPremAfterDiscountDedWaiverMOD,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverPssgrLiab != null" >
+        #{TariffPremAfterDiscountDedWaiverPssgrLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverTheft != null" >
+        #{TariffPremAfterDiscountDedWaiverTheft,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverVTPL != null" >
+        #{TariffPremAfterDiscountDedWaiverVTPL,jdbcType=VARCHAR},
+      </if>
+      <if test="radarSypremium != null" >
+        #{radarSypremium,jdbcType=VARCHAR},
+      </if>
+      <if test="PremNoClaimsDiscount != null" >
+        #{PremNoClaimsDiscount,jdbcType=VARCHAR},
+      </if>
+      <if test="PremTrafficViolation != null" >
+        #{PremTrafficViolation,jdbcType=VARCHAR},
+      </if>
+      <if test="PremUnderwritingFactor != null" >
+        #{PremUnderwritingFactor,jdbcType=VARCHAR},
+      </if>
+      <if test="PremChannelFactor != null" >
+        #{PremChannelFactor,jdbcType=VARCHAR},
+      </if>
+      <if test="PremTotal != null" >
+        #{PremTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="BusinessRulesResults != null" >
+        #{BusinessRulesResults,jdbcType=VARCHAR},
+      </if>
+      <if test="BusinessRulesErrorMessages != null" >
+        #{BusinessRulesErrorMessages,jdbcType=VARCHAR},
+      </if>
+      <if test="BusinessRulesEndorsements != null" >
+        #{BusinessRulesEndorsements,jdbcType=VARCHAR},
+      </if>
+      <if test="RadarNotes != null" >
+        #{RadarNotes,jdbcType=VARCHAR},
+      </if>
+      <if test="RadarModelName != null" >
+        #{RadarModelName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.quicksure.mobile.entity.RadarInfor" >
+    update ludimb_radarinfor
+    <set >
+      <if test="BaseinforOrderNo != null" >
+        baseinforOrderNo = #{BaseinforOrderNo,jdbcType=VARCHAR},
+      </if>
+      <if test="ownername != null" >
+        ownerName = #{ownername,jdbcType=VARCHAR},
+      </if>
+       <if test="lcnno != null" >
+        lcnno = #{lcnno,jdbcType=VARCHAR},
+      </if>
+       <if test="brandName != null" >
+        brandName = #{brandName,jdbcType=VARCHAR},
+      </if>
+       <if test="isImported != null" >
+        isimported = #{isImported,jdbcType=VARCHAR},
+      </if>
+       <if test="highriskcar != null" >
+        highriskcar = #{highriskcar,jdbcType=VARCHAR},
+      </if>
+      <if test="IsChoiceCTPL != null" >
+        jqInsurance = #{IsChoiceCTPL,jdbcType=VARCHAR},
+      </if>
+        jqPremium = #{jqpremium,jdbcType=VARCHAR},
+      <if test="isChoiceMOD != null" >
+        carDamageInsurance = #{isChoiceMOD,jdbcType=VARCHAR},
+      </if>
+        carDamagePremium = #{SSPremMOD,jdbcType=VARCHAR},
+        deductiblecardamagepremium =#{SSPremDedWaiverMOD,jdbcType=VARCHAR},
+      <if test="IsChoiceVTPL != null" >
+        threeLiabilityInsurance = #{IsChoiceVTPL,jdbcType=VARCHAR},
+      </if>
+        threeLiabiltyPremium = #{SSPremVTPL,jdbcType=VARCHAR},
+        deductiblethrliabiltypremium=#{SSPremDedWaiverVTPL,jdbcType=VARCHAR},
+      <if test="IsChoiceTheft != null" >
+        RATinsurance = #{IsChoiceTheft,jdbcType=VARCHAR},
+      </if>
+        RATpremium = #{SSPremVehicleTheft,jdbcType=VARCHAR},
+        deductibleratpremium =#{SSPremDedWaiverTheft,jdbcType=VARCHAR},
+      <if test="IsChoiceDriver != null" >
+        driverSeatInsurance = #{IsChoiceDriver,jdbcType=VARCHAR},
+      </if>
+        driverSeatPremium = #{SSPremDriverLiab,jdbcType=VARCHAR},
+        deductibledriverseatpremium =#{SSPremDedWaiverDriverLiab,jdbcType=VARCHAR},
+      <if test="IsChoicePassenger != null" >
+        passengerInsurance = #{IsChoicePassenger,jdbcType=VARCHAR},
+      </if>
+        passengerPremium = #{SSPremPassengerLiab,jdbcType=VARCHAR},
+        deductiblepassengerpremium =#{SSPremDedWaiverPssgrLiab,jdbcType=VARCHAR},
+      <if test="IsChoiceCombustion != null" >
+        DZinsurance = #{IsChoiceCombustion,jdbcType=VARCHAR},
+      </if>
+        DZpremium = #{SSPremCombustion,jdbcType=VARCHAR},
+        deductibledzpremium= #{SSPremDedWaiverCombust,jdbcType=VARCHAR},
+      <if test="isChoiceGlass != null" >
+        glassInsurance = #{isChoiceGlass,jdbcType=VARCHAR},
+      </if>
+        glassPremium = #{SSPremGlass,jdbcType=VARCHAR},
+      <if test="SSPremTotal != null" >
+        totalPremium = #{SSPremTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="QSActuarialRiskCostCTPL != null" >
+        QSActuarialRiskCostCTPL = #{QSActuarialRiskCostCTPL,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostMOD != null" >
+        QSActuarialRiskCostMOD = #{QSActuarialRiskCostMOD,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostVTPL != null" >
+        QSActuarialRiskCostVTPL = #{QSActuarialRiskCostVTPL,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostTheft != null" >
+        QSActuarialRiskCostTheft = #{QSActuarialRiskCostTheft,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostCombust != null" >
+        QSActuarialRiskCostCombust = #{QSActuarialRiskCostCombust,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostDriverLiab != null" >
+        QSActuarialRiskCostDriverLiab = #{QSActuarialRiskCostDriverLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostPssgrLiab != null" >
+        QSActuarialRiskCostPssgrLiab = #{QSActuarialRiskCostPssgrLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostGlass != null" >
+        QSActuarialRiskCostGlass = #{QSActuarialRiskCostGlass,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostOther != null" >
+        QSActuarialRiskCostOther = #{QSActuarialRiskCostOther,jdbcType=VARCHAR},
+      </if>
+      <if test="QSActuarialRiskCostTotal != null" >
+        QSActuarialRiskCostTotal = #{QSActuarialRiskCostTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountMOD != null" >
+        TariffPremAfterDiscountMOD = #{TariffPremAfterDiscountMOD,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountVTPL != null" >
+        TariffPremAfterDiscountVTPL = #{TariffPremAfterDiscountVTPL,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountTheft != null" >
+        TariffPremAfterDiscountTheft = #{TariffPremAfterDiscountTheft,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountCombust != null" >
+        TariffPremAfterDiscountCombust = #{TariffPremAfterDiscountCombust,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDriverLiab != null" >
+        TariffPremAfterDiscountDriverLiab = #{TariffPremAfterDiscountDriverLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountPssgrLiab != null" >
+        TariffPremAfterDiscountPssgrLiab = #{TariffPremAfterDiscountPssgrLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountGlass != null" >
+        TariffPremAfterDiscountGlass = #{TariffPremAfterDiscountGlass,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverCombust != null" >
+        TariffPremAfterDiscountDedWaiverCombust = #{TariffPremAfterDiscountDedWaiverCombust,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverDriverLiab != null" >
+        TariffPremAfterDiscountDedWaiverDriverLiab = #{TariffPremAfterDiscountDedWaiverDriverLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverMOD != null" >
+        TariffPremAfterDiscountDedWaiverMOD = #{TariffPremAfterDiscountDedWaiverMOD,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverPssgrLiab != null" >
+        TariffPremAfterDiscountDedWaiverPssgrLiab = #{TariffPremAfterDiscountDedWaiverPssgrLiab,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverTheft != null" >
+        TariffPremAfterDiscountDedWaiverTheft = #{TariffPremAfterDiscountDedWaiverTheft,jdbcType=VARCHAR},
+      </if>
+      <if test="TariffPremAfterDiscountDedWaiverVTPL != null" >
+        TariffPremAfterDiscountDedWaiverVTPL = #{TariffPremAfterDiscountDedWaiverVTPL,jdbcType=VARCHAR},
+      </if>
+      <if test="radarSypremium != null" >
+        radarSypremium = #{radarSypremium,jdbcType=VARCHAR},
+      </if>
+      <if test="PremNoClaimsDiscount != null" >
+        PremNoClaimsDiscount = #{PremNoClaimsDiscount,jdbcType=VARCHAR},
+      </if>
+      <if test="PremTrafficViolation != null" >
+        PremTrafficViolation = #{PremTrafficViolation,jdbcType=VARCHAR},
+      </if>
+      <if test="PremUnderwritingFactor != null" >
+        PremUnderwritingFactor = #{PremUnderwritingFactor,jdbcType=VARCHAR},
+      </if>
+      <if test="PremChannelFactor != null" >
+        PremChannelFactor = #{PremChannelFactor,jdbcType=VARCHAR},
+      </if>
+      <if test="PremTotal != null" >
+        PremTotal = #{PremTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="BusinessRulesResults != null" >
+        BusinessRulesResults = #{BusinessRulesResults,jdbcType=VARCHAR},
+      </if>
+      <if test="BusinessRulesErrorMessages != null" >
+        BusinessRulesErrorMessages = #{BusinessRulesErrorMessages,jdbcType=VARCHAR},
+      </if>
+      <if test="BusinessRulesEndorsements != null" >
+        BusinessRulesEndorsements = #{BusinessRulesEndorsements,jdbcType=VARCHAR},
+      </if>
+      <if test="RadarNotes != null" >
+        RadarNotes = #{RadarNotes,jdbcType=VARCHAR},
+      </if>
+      <if test="RadarModelName != null" >
+        RadarModelName = #{RadarModelName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where baseinforOrderNo = #{BaseinforOrderNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.quicksure.mobile.entity.RadarInfor" >
+    update ludimb_radarinfor
+    set baseinforOrderNo = #{BaseinforOrderNo,jdbcType=VARCHAR},
+      ownerName = #{ownername,jdbcType=VARCHAR},
+      lcnno = #{lcnno,jdbcType=VARCHAR},
+      brandName = #{brandName,jdbcType=VARCHAR},
+      isimported = #{isImported,jdbcType=VARCHAR},
+      highriskcar = #{highriskcar,jdbcType=VARCHAR},
+      jqInsurance = #{IsChoiceCTPL,jdbcType=VARCHAR},
+      jqPremium = #{jqpremium,jdbcType=VARCHAR},
+      carDamageInsurance = #{isChoiceMOD,jdbcType=VARCHAR},
+      carDamagePremium = #{SSPremMOD,jdbcType=VARCHAR},
+      deductiblecardamagepremium = #{SSPremDedWaiverMOD,jdbcType=VARCHAR},
+      threeLiabilityInsurance = #{IsChoiceVTPL,jdbcType=VARCHAR},
+      threeLiabiltyPremium = #{SSPremVTPL,jdbcType=VARCHAR},
+      deductiblethrliabiltypremium =#{SSPremDedWaiverVTPL,jdbcType=VARCHAR},
+      RATinsurance = #{IsChoiceTheft,jdbcType=VARCHAR},
+      RATpremium = #{SSPremVehicleTheft,jdbcType=VARCHAR},
+      deductibleratpremium =#{SSPremDedWaiverTheft,jdbcType=VARCHAR},
+      driverSeatInsurance = #{IsChoiceDriver,jdbcType=VARCHAR},
+      driverSeatPremium = #{SSPremDriverLiab,jdbcType=VARCHAR},
+      deductibledriverseatpremium = #{SSPremDedWaiverDriverLiab,jdbcType=VARCHAR},
+      passengerInsurance = #{IsChoicePassenger,jdbcType=VARCHAR},
+      passengerPremium = #{SSPremPassengerLiab,jdbcType=VARCHAR},
+      deductiblepassengerpremium = #{SSPremDedWaiverPssgrLiab,jdbcType=VARCHAR},
+      DZinsurance = #{IsChoiceCombustion,jdbcType=VARCHAR},
+      DZpremium = #{SSPremCombustion,jdbcType=VARCHAR},
+      deductibledzpremium = #{SSPremDedWaiverCombust,jdbcType=VARCHAR},
+      glassInsurance = #{isChoiceGlass,jdbcType=VARCHAR},
+      glassPremium = #{SSPremGlass,jdbcType=VARCHAR},
+      totalPremium = #{SSPremTotal,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      QSActuarialRiskCostCTPL = #{QSActuarialRiskCostCTPL,jdbcType=VARCHAR},
+      QSActuarialRiskCostMOD = #{QSActuarialRiskCostMOD,jdbcType=VARCHAR},
+      QSActuarialRiskCostVTPL = #{QSActuarialRiskCostVTPL,jdbcType=VARCHAR},
+      QSActuarialRiskCostTheft = #{QSActuarialRiskCostTheft,jdbcType=VARCHAR},
+      QSActuarialRiskCostCombust = #{QSActuarialRiskCostCombust,jdbcType=VARCHAR},
+      QSActuarialRiskCostDriverLiab = #{QSActuarialRiskCostDriverLiab,jdbcType=VARCHAR},
+      QSActuarialRiskCostPssgrLiab = #{QSActuarialRiskCostPssgrLiab,jdbcType=VARCHAR},
+      QSActuarialRiskCostGlass = #{QSActuarialRiskCostGlass,jdbcType=VARCHAR},
+      QSActuarialRiskCostOther = #{QSActuarialRiskCostOther,jdbcType=VARCHAR},
+      QSActuarialRiskCostTotal = #{QSActuarialRiskCostTotal,jdbcType=VARCHAR},
+      TariffPremAfterDiscountMOD = #{TariffPremAfterDiscountMOD,jdbcType=VARCHAR},
+      TariffPremAfterDiscountVTPL = #{TariffPremAfterDiscountVTPL,jdbcType=VARCHAR},
+      TariffPremAfterDiscountTheft = #{TariffPremAfterDiscountTheft,jdbcType=VARCHAR},
+      TariffPremAfterDiscountCombust = #{TariffPremAfterDiscountCombust,jdbcType=VARCHAR},
+      TariffPremAfterDiscountDriverLiab = #{TariffPremAfterDiscountDriverLiab,jdbcType=VARCHAR},
+      TariffPremAfterDiscountPssgrLiab = #{TariffPremAfterDiscountPssgrLiab,jdbcType=VARCHAR},
+      TariffPremAfterDiscountGlass = #{TariffPremAfterDiscountGlass,jdbcType=VARCHAR},
+      TariffPremAfterDiscountDedWaiverCombust = #{TariffPremAfterDiscountDedWaiverCombust,jdbcType=VARCHAR},
+      TariffPremAfterDiscountDedWaiverDriverLiab = #{TariffPremAfterDiscountDedWaiverDriverLiab,jdbcType=VARCHAR},
+      TariffPremAfterDiscountDedWaiverMOD = #{TariffPremAfterDiscountDedWaiverMOD,jdbcType=VARCHAR},
+      TariffPremAfterDiscountDedWaiverPssgrLiab = #{TariffPremAfterDiscountDedWaiverPssgrLiab,jdbcType=VARCHAR},
+      TariffPremAfterDiscountDedWaiverTheft = #{TariffPremAfterDiscountDedWaiverTheft,jdbcType=VARCHAR},
+      TariffPremAfterDiscountDedWaiverVTPL = #{TariffPremAfterDiscountDedWaiverVTPL,jdbcType=VARCHAR},
+      radarSypremium = #{radarSypremium,jdbcType=VARCHAR},
+      PremNoClaimsDiscount = #{PremNoClaimsDiscount,jdbcType=VARCHAR},
+      PremTrafficViolation = #{PremTrafficViolation,jdbcType=VARCHAR},
+      PremUnderwritingFactor = #{PremUnderwritingFactor,jdbcType=VARCHAR},
+      PremChannelFactor = #{PremChannelFactor,jdbcType=VARCHAR},
+      PremTotal = #{PremTotal,jdbcType=VARCHAR},
+      BusinessRulesResults = #{BusinessRulesResults,jdbcType=VARCHAR},
+      BusinessRulesErrorMessages = #{BusinessRulesErrorMessages,jdbcType=VARCHAR},
+      BusinessRulesEndorsements = #{BusinessRulesEndorsements,jdbcType=VARCHAR},
+      RadarNotes = #{RadarNotes,jdbcType=VARCHAR},
+      RadarModelName = #{RadarModelName,jdbcType=VARCHAR}
+    where baseinforOrderNo = #{BaseinforOrderNo,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,332 @@
+body,html {
+    padding:0;
+    width:100%;
+    font:13px  "microsoft yahei",Arial,Helvetica,sans-serif;
+    color:#666;
+    margin:-1px 0 0 0;
+    border:none;
+    list-style:none;
+    background:#f6f6f6;
+}
+ol,ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dt,dd,form {
+    margin:0;
+    padding:0;
+    border:none;
+    list-style:none;
+}
+select {
+    padding:4px 12px;
+    outline: none;
+}
+img {
+    vertical-align:middle;
+}
+.rg {
+    float:right;
+}
+.lf {
+    float:left;
+}
+a {
+    text-decoration:none;
+    color:#666;
+}
+a:hover {
+    color:red;
+    text-decoration:underline;
+}
+input {
+    margin:0;
+    border:1px solid #ccc;
+    padding-left:5px;
+}
+div {
+    margin:0;
+    padding:0;
+}
+h4 {
+    background:#b01200;
+    color:#fff;
+}
+h2 {
+    background:#b01200;
+    color:#fff;
+    padding:5px 0 5px 20px;
+    font-size:18px;
+    font-weight:normal;
+    margin-top:-55px;
+}
+.form_content>div {
+    margin:30px 0 0 0;
+    width:800px;
+    padding-top:50px;
+}
+div>p {
+    background:#ddd;
+    color:#fff;
+}
+form {
+    margin:50px;
+    width:1020px;
+    margin:0 auto;
+    border:1px solid #ddd;
+}
+table {
+    border-spacing:0px 15px;
+    background:#fff;
+    padding:20px;
+}
+input[type="text"] {
+    width:120px;
+    border-radius:2px;
+    border:1px solid #bbb;
+    font-size:14px;
+    color:#333;
+    padding:5px;
+    outline: none;
+}
+tr>td:last-child {
+    text-align:right;
+}
+#Product_mation>table {
+    width: 100%;
+    margin-bottom:-50px;
+}
+#Product_mation table span {
+    margin-left:10px;
+}
+#User_mation table {
+    width: 100%;
+}
+#User_mation>div {
+    margin-top:30px;
+}
+#User_mation>p {
+    font-size:15px;
+    position: relative;
+    right: -335px;
+    background: none;
+}
+#Car_user_mation>table {
+    width: 100%;
+}
+#Car_user_mation span {
+    margin-left:10px;
+    display:inline-block;
+    height:20px;
+    line-height:20px;
+    text-align:center;
+    border-radius:2px;
+    cursor:pointer;
+}
+.btn {
+    color: #444;
+    background: #fce630;
+    padding: 5px 26px;
+    border: 1px solid #ddd;
+}
+input[type=radio] {
+    margin-left:15px;
+}
+#Insurance_mation table {
+    width: 100%;
+}
+#Insurance_mation table tr>td:nth-child(4) {
+    text-align:center;
+}
+#Insurance_mation table tr>td:nth-child(5) {
+    text-align:right
+}
+#Parameter_mation table {
+    width: 100%;
+    text-align:right;
+}
+#aside_Service {
+    float:right;
+    width:188px;
+    margin-top: 5px;
+    position: fixed;
+    right: 11%;
+    bottom: 10%;
+}
+#aside_Service p {
+    background:none;
+    border-bottom:1px dashed #bbb;
+    color:#333;
+    margin-bottom:10px;
+    padding-bottom:5px;
+}
+#aside_Service >div {
+    border:1px solid #ececec;
+    padding:15px;
+    margin-top:20px;
+    background:#fff;
+}
+#aside_Service >div li {
+    text-align:right;
+}
+#aside_Service p {
+    color: #444;
+    font-size: 15px;
+}
+#aside_Service ul li {
+    color: #999;
+}
+.btn_list #Compute {
+    color: #444;
+}
+#aside_Service span {
+    vertical-align:middle;
+    margin-top:2px;
+    margin-bottom:10px;
+    display:inline-block;
+    height:20px;
+    line-height:20px;
+    text-align:center;
+    border-radius:2px;
+    width:80px;
+    border:none;
+    font-size: 18px;
+    color: #e72418;
+}
+#btn_list span {
+    border:1px solid #ddd;
+    padding: 3px 37px;
+    font-size: 13px;
+    color: rgb(251, 2, 2);
+    font-weight: 600;
+}
+.btn_list span:hover {
+    background: rgb(6, 22, 249);
+    border-color: rgb(6, 22, 249);
+}
+.model a:hover{
+	background: rgb(6, 22, 249);
+    border-color: rgb(6, 22, 249);
+}
+.pf_left {
+    position:fixed;
+    right:5px;
+    bottom:30px;
+    background:#444;
+    width:80px;
+    padding:16px 15px 7px 16px;
+}
+.pf_left a {
+    float:left;
+    width:66px;
+    cursor:pointer;
+    height:15px;
+    line-height:15px;
+    margin-bottom:10px;
+    padding: 5px;
+    color:#fff;
+    text-decoration: none;
+    text-align:center;
+    border:1px solid #fff;
+    border-radius:2px;
+}
+.pf_left a:hover {
+    background: #e72418;
+    border-color: #e72418;
+}
+#Compute {
+    cursor:pointer;
+    background:#fce630;
+}
+.Missing {
+    border:1px solid red;
+    box-shadow:0 0 2px red;
+    border:none;
+}
+.Must_fill {
+    background:#f8f8f8;
+}
+.None {
+    display:none;
+}
+#User_mation>p {
+    text-align:center
+}
+.car_user_content table, .Policy_holder table, .Insured_content table, .Delivery_content table {
+  margin-bottom: 80px;
+}
+#Car_user_mation {
+  margin-top: -50px;
+}
+#Product_mation {
+  margin-bottom: 33px;
+}
+#Parameter_mation {
+  margin-bottom: 25px;
+}
+.style{
+  margin-bottom: 30px;
+}
+.conModel1{    
+	top: 70px;
+	width: 700px;
+    background: #fff;
+    height: 343px;
+    overflow: hidden;
+    float: right;
+    position: fixed;
+    left: 200px;
+    font-size: 17px;
+    box-shadow: 0 0 8px #999;}
+    .conModel1>h3{background:#fff;color:darkred;border-bottom:1px solid #666;text-align:center;}
+.conModel3>ul{margin-left:10px;}
+.conModel3>ul li{margin-bottom:10px}
+.conModel3>ul li:hover{background:#ddd;color:#fff;}
+h3>b{float:right;height:20px;color:red;font-weight:900;box-shadow: 0 0 8px #ddd;}
+ .errorhei{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top: 0;
+ }
+ .errortan{    width: 60.125%;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 32%;
+    background-color: #FFF;
+    box-sizing: border-box;
+    z-index: 6;
+    text-align: center;
+    padding-bottom: 3%;}
+ .errortan1{
+    font-size: 20px;
+    color: #FFF;
+    background-color: #e42219;
+    line-height: 2.5em;}
+ .errortan2{
+    font-size: 20px;
+    color: #333333;
+    line-height: 2em;
+    margin: 4% auto;
+ }
+ .errortan3{
+    font-size: 20px;
+    color: #FFF;
+    background-color: #e42219;
+    width: 110px;
+    display: inline-block;
+    border-radius: 5px;
+    line-height: 2.1em;
+    margin-top: 20px;
+ }
+#chackMess{
+	    font-size: 22px;
+} 
+.inputP1{
+	border: none;
+    width: 81%;
+    text-align: center;
+}
+.selectAll{
+	width:100px;
+}
+

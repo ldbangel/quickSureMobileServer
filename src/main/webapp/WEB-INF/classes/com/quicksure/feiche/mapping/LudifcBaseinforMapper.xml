@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.quicksure.feiche.dao.LudifcBaseinforMapper" >
+  <resultMap id="BaseResultMap" type="com.quicksure.feiche.entity.LudifcBaseinfor" >
+    <id column="orderId" property="orderid" jdbcType="INTEGER" />
+    <result column="orderNo" property="orderno" jdbcType="VARCHAR" />
+    <result column="userinforId" property="userinforid" jdbcType="INTEGER" />
+    <result column="orderstate" property="orderstate" jdbcType="INTEGER" />
+    <result column="applicationName" property="applicationname" jdbcType="VARCHAR" />
+    <result column="insurerName" property="insurername" jdbcType="VARCHAR" />
+    <result column="app_sex" property="appSex" jdbcType="VARCHAR" />
+    <result column="ins_sex" property="insSex" jdbcType="VARCHAR" />
+    <result column="app_email" property="appEmail" jdbcType="VARCHAR" />
+    <result column="ins_email" property="insEmail" jdbcType="VARCHAR" />
+    <result column="app_cert_type" property="appCertType" jdbcType="VARCHAR" />
+    <result column="ins_cert_type" property="insCertType" jdbcType="VARCHAR" />
+    <result column="app_ID" property="appId" jdbcType="VARCHAR" />
+    <result column="ins_ID" property="insId" jdbcType="VARCHAR" />
+    <result column="app_birthday" property="appBirthday" jdbcType="VARCHAR" />
+    <result column="ins_birthday" property="insBirthday" jdbcType="VARCHAR" />
+    <result column="app_addr" property="appAddr" jdbcType="VARCHAR" />
+    <result column="ins_addr" property="insAddr" jdbcType="VARCHAR" />
+    <result column="app_phone" property="appPhone" jdbcType="VARCHAR" />
+    <result column="ins_phone" property="insPhone" jdbcType="VARCHAR" />
+    <result column="ralationship" property="ralationship" jdbcType="VARCHAR" />
+    <result column="insurance_start_time" property="insuranceStartTime" jdbcType="VARCHAR" />
+    <result column="insruance_end_time" property="insruanceEndTime" jdbcType="VARCHAR" />
+    <result column="insrnc_period" property="insrncPeriod" jdbcType="INTEGER" />
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="updateTime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="prodNo" property="prodno" jdbcType="VARCHAR" />
+    <result column="prodType" property="prodtype" jdbcType="VARCHAR" />
+    <result column="sumAmount" property="sumamount" jdbcType="VARCHAR" />
+    <result column="sumPremium" property="sumpremium" jdbcType="VARCHAR" />
+    <result column="applicationNo" property="applicationno" jdbcType="VARCHAR" />
+    <result column="policyNo" property="policyno" jdbcType="VARCHAR" />
+    <result column="pay_url" property="payUrl" jdbcType="VARCHAR" />
+    <result column="carNo" property="carno" jdbcType="VARCHAR" />
+    <result column="insureDriveNo" property="insuredriveno" jdbcType="VARCHAR" />
+    <result column="tgt_fld11" property="tgtFld11" jdbcType="INTEGER" />
+    <result column="tgt_fld12" property="tgtFld12" jdbcType="VARCHAR" />
+    <result column="tgt_fld16" property="tgtFld16" jdbcType="VARCHAR" />
+    <result column="isagentshare" property="isagentshare" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    orderId, orderNo, userinforId, orderstate, applicationName, insurerName, app_sex, 
+    ins_sex, app_email, ins_email, app_cert_type, ins_cert_type, app_ID, ins_ID, app_birthday, 
+    ins_birthday, app_addr, ins_addr, app_phone, ins_phone, ralationship, insurance_start_time, 
+    insruance_end_time, insrnc_period, createTime, updateTime, prodNo, prodType, sumAmount, 
+    sumPremium, applicationNo, policyNo, pay_url, carNo, insureDriveNo, tgt_fld11, tgt_fld12, 
+    tgt_fld16,isagentshare
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.quicksure.feiche.entity.LudifcBaseinforExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ludifc_baseinfor
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ludifc_baseinfor
+    where orderId = #{orderid,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectByOrderno" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from ludifc_baseinfor
+    where orderNo = #{orderno,jdbcType=VARCHAR}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ludifc_baseinfor
+    where orderId = #{orderid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.quicksure.feiche.entity.LudifcBaseinforExample" >
+    delete from ludifc_baseinfor
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.quicksure.feiche.entity.LudifcBaseinfor" >
+    insert into ludifc_baseinfor (orderId, orderNo, userinforId, 
+      orderstate, applicationName, insurerName, 
+      app_sex, ins_sex, app_email, 
+      ins_email, app_cert_type, ins_cert_type, 
+      app_ID, ins_ID, app_birthday, 
+      ins_birthday, app_addr, ins_addr, 
+      app_phone, ins_phone, ralationship, 
+      insurance_start_time, insruance_end_time, insrnc_period, 
+      createTime, updateTime, prodNo, 
+      prodType, sumAmount, sumPremium, 
+      applicationNo, policyNo, pay_url, 
+      carNo, insureDriveNo, tgt_fld11, 
+      tgt_fld12, tgt_fld16)
+    values (#{orderid,jdbcType=INTEGER}, #{orderno,jdbcType=VARCHAR}, #{userinforid,jdbcType=INTEGER}, 
+      #{orderstate,jdbcType=INTEGER}, #{applicationname,jdbcType=VARCHAR}, #{insurername,jdbcType=VARCHAR}, 
+      #{appSex,jdbcType=VARCHAR}, #{insSex,jdbcType=VARCHAR}, #{appEmail,jdbcType=VARCHAR}, 
+      #{insEmail,jdbcType=VARCHAR}, #{appCertType,jdbcType=VARCHAR}, #{insCertType,jdbcType=VARCHAR}, 
+      #{appId,jdbcType=VARCHAR}, #{insId,jdbcType=VARCHAR}, #{appBirthday,jdbcType=VARCHAR}, 
+      #{insBirthday,jdbcType=VARCHAR}, #{appAddr,jdbcType=VARCHAR}, #{insAddr,jdbcType=VARCHAR}, 
+      #{appPhone,jdbcType=VARCHAR}, #{insPhone,jdbcType=VARCHAR}, #{ralationship,jdbcType=VARCHAR}, 
+      #{insuranceStartTime,jdbcType=VARCHAR}, #{insruanceEndTime,jdbcType=VARCHAR}, #{insrncPeriod,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, #{prodno,jdbcType=VARCHAR}, 
+      #{prodtype,jdbcType=VARCHAR}, #{sumamount,jdbcType=VARCHAR}, #{sumpremium,jdbcType=VARCHAR}, 
+      #{applicationno,jdbcType=VARCHAR}, #{policyno,jdbcType=VARCHAR}, #{payUrl,jdbcType=VARCHAR}, 
+      #{carno,jdbcType=VARCHAR}, #{insuredriveno,jdbcType=VARCHAR}, #{tgtFld11,jdbcType=INTEGER}, 
+      #{tgtFld12,jdbcType=VARCHAR}, #{tgtFld16,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.quicksure.feiche.entity.LudifcBaseinfor" >
+    insert into ludifc_baseinfor
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderid != null" >
+        orderId,
+      </if>
+      <if test="orderno != null" >
+        orderNo,
+      </if>
+      <if test="userinforid != null" >
+        userinforId,
+      </if>
+      <if test="orderstate != null" >
+        orderstate,
+      </if>
+      <if test="applicationname != null" >
+        applicationName,
+      </if>
+      <if test="insurername != null" >
+        insurerName,
+      </if>
+      <if test="appSex != null" >
+        app_sex,
+      </if>
+      <if test="insSex != null" >
+        ins_sex,
+      </if>
+      <if test="appEmail != null" >
+        app_email,
+      </if>
+      <if test="insEmail != null" >
+        ins_email,
+      </if>
+      <if test="appCertType != null" >
+        app_cert_type,
+      </if>
+      <if test="insCertType != null" >
+        ins_cert_type,
+      </if>
+      <if test="appId != null" >
+        app_ID,
+      </if>
+      <if test="insId != null" >
+        ins_ID,
+      </if>
+      <if test="appBirthday != null" >
+        app_birthday,
+      </if>
+      <if test="insBirthday != null" >
+        ins_birthday,
+      </if>
+      <if test="appAddr != null" >
+        app_addr,
+      </if>
+      <if test="insAddr != null" >
+        ins_addr,
+      </if>
+      <if test="appPhone != null" >
+        app_phone,
+      </if>
+      <if test="insPhone != null" >
+        ins_phone,
+      </if>
+      <if test="ralationship != null" >
+        ralationship,
+      </if>
+      <if test="insuranceStartTime != null" >
+        insurance_start_time,
+      </if>
+      <if test="insruanceEndTime != null" >
+        insruance_end_time,
+      </if>
+      <if test="insrncPeriod != null" >
+        insrnc_period,
+      </if>
+      <if test="createtime != null" >
+        createTime,
+      </if>
+      <if test="updatetime != null" >
+        updateTime,
+      </if>
+      <if test="prodno != null" >
+        prodNo,
+      </if>
+      <if test="prodtype != null" >
+        prodType,
+      </if>
+      <if test="sumamount != null" >
+        sumAmount,
+      </if>
+      <if test="sumpremium != null" >
+        sumPremium,
+      </if>
+      <if test="applicationno != null" >
+        applicationNo,
+      </if>
+      <if test="policyno != null" >
+        policyNo,
+      </if>
+      <if test="payUrl != null" >
+        pay_url,
+      </if>
+      <if test="carno != null" >
+        carNo,
+      </if>
+      <if test="insuredriveno != null" >
+        insureDriveNo,
+      </if>
+      <if test="tgtFld11 != null" >
+        tgt_fld11,
+      </if>
+      <if test="tgtFld12 != null" >
+        tgt_fld12,
+      </if>
+      <if test="tgtFld16 != null" >
+        tgt_fld16,
+      </if>
+      <if test="isagentshare != null" >
+        isagentshare,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderid != null" >
+        #{orderid,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null" >
+        #{orderno,jdbcType=VARCHAR},
+      </if>
+      <if test="userinforid != null" >
+        #{userinforid,jdbcType=INTEGER},
+      </if>
+      <if test="orderstate != null" >
+        #{orderstate,jdbcType=INTEGER},
+      </if>
+      <if test="applicationname != null" >
+        #{applicationname,jdbcType=VARCHAR},
+      </if>
+      <if test="insurername != null" >
+        #{insurername,jdbcType=VARCHAR},
+      </if>
+      <if test="appSex != null" >
+        #{appSex,jdbcType=VARCHAR},
+      </if>
+      <if test="insSex != null" >
+        #{insSex,jdbcType=VARCHAR},
+      </if>
+      <if test="appEmail != null" >
+        #{appEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="insEmail != null" >
+        #{insEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="appCertType != null" >
+        #{appCertType,jdbcType=VARCHAR},
+      </if>
+      <if test="insCertType != null" >
+        #{insCertType,jdbcType=VARCHAR},
+      </if>
+      <if test="appId != null" >
+        #{appId,jdbcType=VARCHAR},
+      </if>
+      <if test="insId != null" >
+        #{insId,jdbcType=VARCHAR},
+      </if>
+      <if test="appBirthday != null" >
+        #{appBirthday,jdbcType=VARCHAR},
+      </if>
+      <if test="insBirthday != null" >
+        #{insBirthday,jdbcType=VARCHAR},
+      </if>
+      <if test="appAddr != null" >
+        #{appAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="insAddr != null" >
+        #{insAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="appPhone != null" >
+        #{appPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="insPhone != null" >
+        #{insPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="ralationship != null" >
+        #{ralationship,jdbcType=VARCHAR},
+      </if>
+      <if test="insuranceStartTime != null" >
+        #{insuranceStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="insruanceEndTime != null" >
+        #{insruanceEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="insrncPeriod != null" >
+        #{insrncPeriod,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="prodno != null" >
+        #{prodno,jdbcType=VARCHAR},
+      </if>
+      <if test="prodtype != null" >
+        #{prodtype,jdbcType=VARCHAR},
+      </if>
+      <if test="sumamount != null" >
+        #{sumamount,jdbcType=VARCHAR},
+      </if>
+      <if test="sumpremium != null" >
+        #{sumpremium,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationno != null" >
+        #{applicationno,jdbcType=VARCHAR},
+      </if>
+      <if test="policyno != null" >
+        #{policyno,jdbcType=VARCHAR},
+      </if>
+      <if test="payUrl != null" >
+        #{payUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="carno != null" >
+        #{carno,jdbcType=VARCHAR},
+      </if>
+      <if test="insuredriveno != null" >
+        #{insuredriveno,jdbcType=VARCHAR},
+      </if>
+      <if test="tgtFld11 != null" >
+        #{tgtFld11,jdbcType=INTEGER},
+      </if>
+      <if test="tgtFld12 != null" >
+        #{tgtFld12,jdbcType=VARCHAR},
+      </if>
+      <if test="tgtFld16 != null" >
+        #{tgtFld16,jdbcType=VARCHAR},
+      </if>
+       <if test="isagentshare != null" >
+        #{isagentshare,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.quicksure.feiche.entity.LudifcBaseinforExample" resultType="java.lang.Integer" >
+    select count(*) from ludifc_baseinfor
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ludifc_baseinfor
+    <set >
+      <if test="record.orderid != null" >
+        orderId = #{record.orderid,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderno != null" >
+        orderNo = #{record.orderno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userinforid != null" >
+        userinforId = #{record.userinforid,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderstate != null" >
+        orderstate = #{record.orderstate,jdbcType=INTEGER},
+      </if>
+      <if test="record.applicationname != null" >
+        applicationName = #{record.applicationname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insurername != null" >
+        insurerName = #{record.insurername,jdbcType=VARCHAR},
+      </if>
+      <if test="record.appSex != null" >
+        app_sex = #{record.appSex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insSex != null" >
+        ins_sex = #{record.insSex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.appEmail != null" >
+        app_email = #{record.appEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insEmail != null" >
+        ins_email = #{record.insEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.appCertType != null" >
+        app_cert_type = #{record.appCertType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insCertType != null" >
+        ins_cert_type = #{record.insCertType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.appId != null" >
+        app_ID = #{record.appId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insId != null" >
+        ins_ID = #{record.insId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.appBirthday != null" >
+        app_birthday = #{record.appBirthday,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insBirthday != null" >
+        ins_birthday = #{record.insBirthday,jdbcType=VARCHAR},
+      </if>
+      <if test="record.appAddr != null" >
+        app_addr = #{record.appAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insAddr != null" >
+        ins_addr = #{record.insAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.appPhone != null" >
+        app_phone = #{record.appPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insPhone != null" >
+        ins_phone = #{record.insPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ralationship != null" >
+        ralationship = #{record.ralationship,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insuranceStartTime != null" >
+        insurance_start_time = #{record.insuranceStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insruanceEndTime != null" >
+        insruance_end_time = #{record.insruanceEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insrncPeriod != null" >
+        insrnc_period = #{record.insrncPeriod,jdbcType=INTEGER},
+      </if>
+      <if test="record.createtime != null" >
+        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updatetime != null" >
+        updateTime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.prodno != null" >
+        prodNo = #{record.prodno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.prodtype != null" >
+        prodType = #{record.prodtype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sumamount != null" >
+        sumAmount = #{record.sumamount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sumpremium != null" >
+        sumPremium = #{record.sumpremium,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applicationno != null" >
+        applicationNo = #{record.applicationno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.policyno != null" >
+        policyNo = #{record.policyno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payUrl != null" >
+        pay_url = #{record.payUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.carno != null" >
+        carNo = #{record.carno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.insuredriveno != null" >
+        insureDriveNo = #{record.insuredriveno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tgtFld11 != null" >
+        tgt_fld11 = #{record.tgtFld11,jdbcType=INTEGER},
+      </if>
+      <if test="record.tgtFld12 != null" >
+        tgt_fld12 = #{record.tgtFld12,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tgtFld16 != null" >
+        tgt_fld16 = #{record.tgtFld16,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ludifc_baseinfor
+    set orderId = #{record.orderid,jdbcType=INTEGER},
+      orderNo = #{record.orderno,jdbcType=VARCHAR},
+      userinforId = #{record.userinforid,jdbcType=INTEGER},
+      orderstate = #{record.orderstate,jdbcType=INTEGER},
+      applicationName = #{record.applicationname,jdbcType=VARCHAR},
+      insurerName = #{record.insurername,jdbcType=VARCHAR},
+      app_sex = #{record.appSex,jdbcType=VARCHAR},
+      ins_sex = #{record.insSex,jdbcType=VARCHAR},
+      app_email = #{record.appEmail,jdbcType=VARCHAR},
+      ins_email = #{record.insEmail,jdbcType=VARCHAR},
+      app_cert_type = #{record.appCertType,jdbcType=VARCHAR},
+      ins_cert_type = #{record.insCertType,jdbcType=VARCHAR},
+      app_ID = #{record.appId,jdbcType=VARCHAR},
+      ins_ID = #{record.insId,jdbcType=VARCHAR},
+      app_birthday = #{record.appBirthday,jdbcType=VARCHAR},
+      ins_birthday = #{record.insBirthday,jdbcType=VARCHAR},
+      app_addr = #{record.appAddr,jdbcType=VARCHAR},
+      ins_addr = #{record.insAddr,jdbcType=VARCHAR},
+      app_phone = #{record.appPhone,jdbcType=VARCHAR},
+      ins_phone = #{record.insPhone,jdbcType=VARCHAR},
+      ralationship = #{record.ralationship,jdbcType=VARCHAR},
+      insurance_start_time = #{record.insuranceStartTime,jdbcType=VARCHAR},
+      insruance_end_time = #{record.insruanceEndTime,jdbcType=VARCHAR},
+      insrnc_period = #{record.insrncPeriod,jdbcType=INTEGER},
+      createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      updateTime = #{record.updatetime,jdbcType=TIMESTAMP},
+      prodNo = #{record.prodno,jdbcType=VARCHAR},
+      prodType = #{record.prodtype,jdbcType=VARCHAR},
+      sumAmount = #{record.sumamount,jdbcType=VARCHAR},
+      sumPremium = #{record.sumpremium,jdbcType=VARCHAR},
+      applicationNo = #{record.applicationno,jdbcType=VARCHAR},
+      policyNo = #{record.policyno,jdbcType=VARCHAR},
+      pay_url = #{record.payUrl,jdbcType=VARCHAR},
+      carNo = #{record.carno,jdbcType=VARCHAR},
+      insureDriveNo = #{record.insuredriveno,jdbcType=VARCHAR},
+      tgt_fld11 = #{record.tgtFld11,jdbcType=INTEGER},
+      tgt_fld12 = #{record.tgtFld12,jdbcType=VARCHAR},
+      tgt_fld16 = #{record.tgtFld16,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.quicksure.feiche.entity.LudifcBaseinfor" >
+    update ludifc_baseinfor
+    <set >
+      <if test="orderno != null" >
+        orderNo = #{orderno,jdbcType=VARCHAR},
+      </if>
+      <if test="userinforid != null" >
+        userinforId = #{userinforid,jdbcType=INTEGER},
+      </if>
+      <if test="orderstate != null" >
+        orderstate = #{orderstate,jdbcType=INTEGER},
+      </if>
+      <if test="applicationname != null" >
+        applicationName = #{applicationname,jdbcType=VARCHAR},
+      </if>
+      <if test="insurername != null" >
+        insurerName = #{insurername,jdbcType=VARCHAR},
+      </if>
+      <if test="appSex != null" >
+        app_sex = #{appSex,jdbcType=VARCHAR},
+      </if>
+      <if test="insSex != null" >
+        ins_sex = #{insSex,jdbcType=VARCHAR},
+      </if>
+      <if test="appEmail != null" >
+        app_email = #{appEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="insEmail != null" >
+        ins_email = #{insEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="appCertType != null" >
+        app_cert_type = #{appCertType,jdbcType=VARCHAR},
+      </if>
+      <if test="insCertType != null" >
+        ins_cert_type = #{insCertType,jdbcType=VARCHAR},
+      </if>
+      <if test="appId != null" >
+        app_ID = #{appId,jdbcType=VARCHAR},
+      </if>
+      <if test="insId != null" >
+        ins_ID = #{insId,jdbcType=VARCHAR},
+      </if>
+      <if test="appBirthday != null" >
+        app_birthday = #{appBirthday,jdbcType=VARCHAR},
+      </if>
+      <if test="insBirthday != null" >
+        ins_birthday = #{insBirthday,jdbcType=VARCHAR},
+      </if>
+      <if test="appAddr != null" >
+        app_addr = #{appAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="insAddr != null" >
+        ins_addr = #{insAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="appPhone != null" >
+        app_phone = #{appPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="insPhone != null" >
+        ins_phone = #{insPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="ralationship != null" >
+        ralationship = #{ralationship,jdbcType=VARCHAR},
+      </if>
+      <if test="insuranceStartTime != null" >
+        insurance_start_time = #{insuranceStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="insruanceEndTime != null" >
+        insruance_end_time = #{insruanceEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="insrncPeriod != null" >
+        insrnc_period = #{insrncPeriod,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null" >
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="prodno != null" >
+        prodNo = #{prodno,jdbcType=VARCHAR},
+      </if>
+      <if test="prodtype != null" >
+        prodType = #{prodtype,jdbcType=VARCHAR},
+      </if>
+      <if test="sumamount != null" >
+        sumAmount = #{sumamount,jdbcType=VARCHAR},
+      </if>
+      <if test="sumpremium != null" >
+        sumPremium = #{sumpremium,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationno != null" >
+        applicationNo = #{applicationno,jdbcType=VARCHAR},
+      </if>
+      <if test="policyno != null" >
+        policyNo = #{policyno,jdbcType=VARCHAR},
+      </if>
+      <if test="payUrl != null" >
+        pay_url = #{payUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="carno != null" >
+        carNo = #{carno,jdbcType=VARCHAR},
+      </if>
+      <if test="insuredriveno != null" >
+        insureDriveNo = #{insuredriveno,jdbcType=VARCHAR},
+      </if>
+      <if test="tgtFld11 != null" >
+        tgt_fld11 = #{tgtFld11,jdbcType=INTEGER},
+      </if>
+      <if test="tgtFld12 != null" >
+        tgt_fld12 = #{tgtFld12,jdbcType=VARCHAR},
+      </if>
+      <if test="tgtFld16 != null" >
+        tgt_fld16 = #{tgtFld16,jdbcType=VARCHAR},
+      </if>
+      <if test="isagentshare != null" >
+        isagentshare= #{isagentshare,jdbcType=INTEGER},
+      </if>
+    </set>
+    where orderNo = #{orderno,jdbcType=VARCHAR}
+  </update>
+  
+  <update id="updateByPrimaryKey" parameterType="com.quicksure.feiche.entity.LudifcBaseinfor" >
+    update ludifc_baseinfor
+    set orderNo = #{orderno,jdbcType=VARCHAR},
+      userinforId = #{userinforid,jdbcType=INTEGER},
+      orderstate = #{orderstate,jdbcType=INTEGER},
+      applicationName = #{applicationname,jdbcType=VARCHAR},
+      insurerName = #{insurername,jdbcType=VARCHAR},
+      app_sex = #{appSex,jdbcType=VARCHAR},
+      ins_sex = #{insSex,jdbcType=VARCHAR},
+      app_email = #{appEmail,jdbcType=VARCHAR},
+      ins_email = #{insEmail,jdbcType=VARCHAR},
+      app_cert_type = #{appCertType,jdbcType=VARCHAR},
+      ins_cert_type = #{insCertType,jdbcType=VARCHAR},
+      app_ID = #{appId,jdbcType=VARCHAR},
+      ins_ID = #{insId,jdbcType=VARCHAR},
+      app_birthday = #{appBirthday,jdbcType=VARCHAR},
+      ins_birthday = #{insBirthday,jdbcType=VARCHAR},
+      app_addr = #{appAddr,jdbcType=VARCHAR},
+      ins_addr = #{insAddr,jdbcType=VARCHAR},
+      app_phone = #{appPhone,jdbcType=VARCHAR},
+      ins_phone = #{insPhone,jdbcType=VARCHAR},
+      ralationship = #{ralationship,jdbcType=VARCHAR},
+      insurance_start_time = #{insuranceStartTime,jdbcType=VARCHAR},
+      insruance_end_time = #{insruanceEndTime,jdbcType=VARCHAR},
+      insrnc_period = #{insrncPeriod,jdbcType=INTEGER},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      prodNo = #{prodno,jdbcType=VARCHAR},
+      prodType = #{prodtype,jdbcType=VARCHAR},
+      sumAmount = #{sumamount,jdbcType=VARCHAR},
+      sumPremium = #{sumpremium,jdbcType=VARCHAR},
+      applicationNo = #{applicationno,jdbcType=VARCHAR},
+      policyNo = #{policyno,jdbcType=VARCHAR},
+      pay_url = #{payUrl,jdbcType=VARCHAR},
+      carNo = #{carno,jdbcType=VARCHAR},
+      insureDriveNo = #{insuredriveno,jdbcType=VARCHAR},
+      tgt_fld11 = #{tgtFld11,jdbcType=INTEGER},
+      tgt_fld12 = #{tgtFld12,jdbcType=VARCHAR},
+      tgt_fld16 = #{tgtFld16,jdbcType=VARCHAR}
+    where orderId = #{orderid,jdbcType=INTEGER}
+  </update>
+</mapper>

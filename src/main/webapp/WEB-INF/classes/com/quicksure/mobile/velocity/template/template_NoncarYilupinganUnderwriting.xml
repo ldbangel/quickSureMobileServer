@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PACKET type="REQUEST" version="1.0">
+	<!-- 报文头属性 -->
+	<HEAD>
+		<!-- 消息请求类型 固定值 非空 -->
+		<TRANSTYPE>SNY</TRANSTYPE>
+		<!-- 系统编码 固定值 非空 -->
+		<SYSCODE>NETSALE</SYSCODE>
+		<!-- 内容格式 固定值 非空 -->
+		<CONTENTTYPE>XML</CONTENTTYPE>
+		<!-- 验证类型 固定值 非空 -->
+        <VERIFYTYPE>1</VERIFYTYPE>
+		<!-- 验证用户名 固定值  非空 -->
+		<USER>$!{SinosafeFeicheUserName}</USER>
+		<!-- 验证用户密码 固定值 非空 -->
+		<PASSWORD>$!{SinosafeFeichePassword}</PASSWORD>
+		<!-- 交易流水号 唯一 非空 -->
+		<SVCSEQNO>$!{dataObj.getLudifcBaseinfor().getOrderno()}</SVCSEQNO>
+	</HEAD>
+	<!-- 第三方配置属性 -->
+	<THIRD>
+		<!-- 异步回调（告知保单号）第三方地址  非空-->
+		<THIRDURL>$!{sinosafeAsynchronousUrl}</THIRDURL>
+		<!-- 企联同步(支付完成后跳转)第三方地址  非空-->
+		<SYNURL>$!{sinosafeSynchronizationUrl}</SYNURL>
+		<!-- 业务归属标志 0：个性化产品，1：通用产品，通过配置获取业务归属  固定值 非空-->  
+		<BUSINESSOWNERFLAG>1</BUSINESSOWNERFLAG>  
+		<!-- 渠道代码  固定值 非空 -->
+		<EXTENTERPCODE>$!{sinosafeFeicheCode}</EXTENTERPCODE>
+		<!-- 产品代码  固定值 非空 -->
+		<PRODNO>$!{dataObj.getLudifcBaseinfor().getProdno()}</PRODNO>
+		<!-- 方案  固定值 非空 -->
+		<PLANNO>0000</PLANNO>
+		<!-- 请求类型 固定值 非空 -->
+		<TRANSCODE>100011</TRANSCODE>
+		<!-- 第三方交易发起日期 非空 -->
+		<TRANSDATE>$!{date}</TRANSDATE>
+		<!-- 第三方交易发起时间 非空 -->
+		<TRANSTIME>$!{times}</TRANSTIME>
+	</THIRD>
+	<!-- 保单信息 -->
+	<BODY>
+		<!-- 方案 A:方案一、B:方案二、C:方案三、D:方案四、E:方案五、F：方案六  非空-->
+		<C_PROD_TYPE>$!{dataObj.getLudifcBaseinfor().getProdtype()}</C_PROD_TYPE>	
+		<!--投保份数 限购1份 -->
+		<INVESTCOUNT>1</INVESTCOUNT>
+        <!-- 保险期间(天数) 非空 -->
+		<C_INSRNC_PERIOD>$!{dataObj.getLudifcBaseinfor().getInsrncPeriod()}</C_INSRNC_PERIOD>
+		<!-- 投保日期  非空 -->
+		<C_APP_TM>$!{dateTime}</C_APP_TM>
+		<!-- 保险起期 非空 -->
+		<T_INSRNC_BGN_TM>$!{dataObj.getLudifcBaseinfor().getInsuranceStartTime()}</T_INSRNC_BGN_TM>
+		<!-- 保险止期  非空 -->
+		<T_INSRNC_END_TM>$!{dataObj.getLudifcBaseinfor().getInsruanceEndTime()}</T_INSRNC_END_TM>
+		<!-- 投保人名称 非空 -->
+		<C_APP_NME>$!{dataObj.getLudifcBaseinfor().getApplicationname()}</C_APP_NME>
+		<!-- 投保人性别 非空（106001 男，106002 女） -->
+		<C_APP_SEX>$!{dataObj.getLudifcBaseinfor().getAppSex()}</C_APP_SEX>
+		<!-- 投保人证件类型 非空（120001身份证、120005护照、120002军官证、120010士兵证、120006回乡证、120014其他 ）  -->
+		<C_APP_ID_TYPE>120001</C_APP_ID_TYPE>   
+		<!-- 投保人证件号码 非空 -->
+		<C_APP_ID_CARD>$!{dataObj.getLudifcBaseinfor().getAppId()}</C_APP_ID_CARD>
+		<!-- 投保人出生日期 非空-->
+		<C_APP_BIRTHDAY>$!{dataObj.getLudifcBaseinfor().getAppBirthday()}</C_APP_BIRTHDAY>	
+		<!-- 投保人常住城市 -->
+		<C_APP_ADDR>$!{dataObj.getLudifcBaseinfor().getAppAddr()}</C_APP_ADDR>	
+		<!-- 投保人Email 非空 接收电子保单 -->
+		<C_APP_EMAIL>$!{dataObj.getLudifcBaseinfor().getAppEmail()}</C_APP_EMAIL>
+		<!-- 投保人手机 非空 -->
+		<C_APP_MOBILE>$!{dataObj.getLudifcBaseinfor().getAppPhone()}</C_APP_MOBILE>
+		<!-- 投保人与被保险人的关系 非空 （601005本人） -->
+		<C_RELA_CDE>$!{dataObj.getLudifcBaseinfor().getRalationship()}</C_RELA_CDE>	
+		<!-- 总保额 非空 -->
+		<SUMAMOUNT>$!{dataObj.getLudifcBaseinfor().getSumamount()}</SUMAMOUNT>
+		<!-- 总保费 非空 -->
+		<SUMPREMIUM>$!{dataObj.getLudifcBaseinfor().getSumpremium()}</SUMPREMIUM>		
+		<!-- 被保人信息 -->
+		<INSLIFE_LIST>
+			<INSLIFE_DATA>			    
+				<!-- 被保人姓名 非空 -->
+				<C_INSRNT_NME>$!{dataObj.getLudifcBaseinfor().getInsurername()}</C_INSRNT_NME>
+				<!-- 被保人性别 非空（106001 男，106002 女）-->
+				<C_INSRNT_SEX>$!{dataObj.getLudifcBaseinfor().getInsSex()}</C_INSRNT_SEX>
+				<!-- 被保人证件类型  非空（120001身份证、120005护照、120002军官证、120010士兵证、120006回乡证、120014其他 ） -->
+				<C_INSRNT_CERT_TYPE>120001</C_INSRNT_CERT_TYPE>
+				<!-- 被保人证件号码 非空 -->
+				<C_INSRNT_CERT_NO>$!{dataObj.getLudifcBaseinfor().getInsId()}</C_INSRNT_CERT_NO>
+				<!-- 被保人出生年月日 非空 -->
+				<C_INSRNT_BIRTHDAY>$!{dataObj.getLudifcBaseinfor().getInsBirthday()}</C_INSRNT_BIRTHDAY>
+				<!-- 被保人常住城市 -->
+				<C_INSRNT_ADDR>$!{dataObj.getLudifcBaseinfor().getInsAddr()}</C_INSRNT_ADDR>	
+				<!-- 被保人Email   -->
+				<C_INSRNT_EMAIL>$!{dataObj.getLudifcBaseinfor().getInsEmail()}</C_INSRNT_EMAIL>
+				<!-- 被保人手机 -->
+				<C_INSRNT_MOBILE>$!{dataObj.getLudifcBaseinfor().getInsPhone()}</C_INSRNT_MOBILE>      
+			</INSLIFE_DATA>
+		</INSLIFE_LIST>	
+	</BODY>
+</PACKET>
